@@ -1,0 +1,481 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33C04F5B-1F47-4F09-8F2B-715D26C829C3}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.UI</RootNamespace>
+    <AssemblyName>Ix.Palantir.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
+    <ExcludeApp_Data>true</ExcludeApp_Data>
+    <CodeAnalysisIgnoreGeneratedCode>true</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ix.Palantir.App.Bootstrapper">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.App.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DomainModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Exceptions">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Exceptions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Localization.API">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Localization.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Logging">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Querying.Common">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Querying.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Security.API">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Security.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Services.API">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Services.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Utilities, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ProjectOwnerSecurityAttribute.cs" />
+    <Compile Include="Binders\DataFilterBinder.cs" />
+    <Compile Include="Binders\IntListBinder.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ExportController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Metrics\ActiveUsersController.cs" />
+    <Compile Include="Controllers\Metrics\AttitudeController.cs" />
+    <Compile Include="Controllers\Metrics\AudienceController.cs" />
+    <Compile Include="Controllers\Metrics\CompareGroupsController.cs" />
+    <Compile Include="Controllers\Metrics\ContentController.cs" />
+    <Compile Include="Controllers\Metrics\InterestsController.cs" />
+    <Compile Include="Controllers\Metrics\InteractionRateController.cs" />
+    <Compile Include="Controllers\Metrics\PostsController.cs" />
+    <Compile Include="Controllers\Metrics\DashboardController.cs" />
+    <Compile Include="Controllers\Metrics\MetricsController.cs" />
+    <Compile Include="Controllers\Metrics\SocialController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\RulesController.cs" />
+    <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Formatters\UIResponseTimeFromatter.cs" />
+    <Compile Include="ModelBuilders\ActiveUserJsonModelBuilder.cs" />
+    <Compile Include="ModelBuilders\ActiveUserJsonModelBuilderOptions.cs" />
+    <Compile Include="Extensions\HtmlHelperExtensions.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Models\Chart\BarAlign.cs" />
+    <Compile Include="Models\Chart\Builders\ActivityAnalysisDataProvider.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\DashboardTrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\CharPoint_WithPercents.cs" />
+    <Compile Include="Models\CheckAvailabilityModel.cs" />
+    <Compile Include="Models\CreateProjectViewModel.cs" />
+    <Compile Include="Models\GlobalModel.cs" />
+    <Compile Include="Models\Metrics\AudienceSearchResult.cs" />
+    <Compile Include="Models\Metrics\AudienceViewModel.cs" />
+    <Compile Include="Models\Metrics\InterestsViewModel.cs" />
+    <Compile Include="Models\ProjectListModel.cs" />
+    <Compile Include="Models\ProjectListModelItem.cs" />
+    <Compile Include="Models\Settings\GroupSettingsViewModelItem.cs" />
+    <Compile Include="Models\Shared\KpiListModel.cs" />
+    <Compile Include="Models\Shared\KpiListItemModel.cs" />
+    <Compile Include="Models\Shared\KpiValueModel.cs" />
+    <Compile Include="Models\Shared\ValueType.cs" />
+    <Compile Include="Models\Chart\Builders\EducationChartDataProvider.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\InteractionRateTrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\TrendChartBuilderBase.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\TrendMultiChartBuilder.cs" />
+    <Compile Include="Models\Metrics\ActiveUserJsonModel.cs" />
+    <Compile Include="Models\Metrics\ActiveUserTableColumn.cs" />
+    <Compile Include="Models\Metrics\ActiveUserViewModel.cs" />
+    <Compile Include="Models\Metrics\MostActiveUsers.cs" />
+    <Compile Include="Models\Shared\UiTableCellValue.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Renderers\UiColumnTableRenderer.cs" />
+    <Compile Include="Renderers\UiTableRenderer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Chart\Builders\AgeChartDataProvider.cs" />
+    <Compile Include="Models\Chart\Builders\GenderChartDataProvider.cs" />
+    <Compile Include="Models\Chart\Builders\Pie\PieChartBuilder.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\SocialTrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\PieChartData.cs" />
+    <Compile Include="Models\Chart\PieChartDataItem.cs" />
+    <Compile Include="Models\Chart\TrendChartData.cs" />
+    <Compile Include="Models\Chart\ChartPeriod.cs" />
+    <Compile Include="Models\Chart\ChartPoint.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\TrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\PhotoTrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\PostTrendChartBuilder.cs" />
+    <Compile Include="Models\Chart\Builders\Trend\VideoTrendChartBuilder.cs" />
+    <Compile Include="Models\Converters\UITableCompareGroupModelConverter.cs" />
+    <Compile Include="Models\Converters\UiTableModelsConverter.cs" />
+    <Compile Include="Models\CustomDateRange.cs" />
+    <Compile Include="Models\Converters\DateRangeConverter.cs" />
+    <Compile Include="Models\GroupInfoRequest.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\Login\LoginViewModel.cs" />
+    <Compile Include="Models\Metrics\CompareGroupsInitViewModel.cs" />
+    <Compile Include="Formatters\UiPostDensityFormatter.cs" />
+    <Compile Include="Models\Shared\UiTableColumn.cs" />
+    <Compile Include="Models\Metrics\MostPopularContentModel.cs" />
+    <Compile Include="Models\Metrics\DashboardViewModel.cs" />
+    <Compile Include="Models\Metrics\MetricsViewModel.cs" />
+    <Compile Include="Models\Metrics\MostPopularPostModel.cs" />
+    <Compile Include="Models\Metrics\PostsViewModel.cs" />
+    <Compile Include="Models\Metrics\SocialViewModel.cs" />
+    <Compile Include="Models\Metrics\UserWithInterestModel.cs" />
+    <Compile Include="Models\Settings\GroupSettingsViewModel.cs" />
+    <Compile Include="Models\Shared\ChartDateRangeSelectorModel.cs" />
+    <Compile Include="Models\Shared\TopEntriesChartModel.cs" />
+    <Compile Include="Models\Shared\UiLink.cs" />
+    <Compile Include="Models\Shared\UiTagCloudElement.cs" />
+    <Compile Include="Formatters\ComparativeValueFormatter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Attributes\SortableBy.cs" />
+    <Compile Include="Attributes\UiTableColumnAttribute.cs" />
+    <Content Include="Content\images\animated-overlay.gif" />
+    <Content Include="Content\images\target_users.png" />
+    <Content Include="Content\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Scripts\jquery-ui.1.10.3.js" />
+    <Content Include="Scripts\palantir.metrics.audience.js" />
+    <Content Include="Scripts\jquery.combobox.js" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\images\add_project.png" />
+    <Content Include="Content\images\arrow_down.png" />
+    <Content Include="Content\images\arrow_left.png" />
+    <Content Include="Content\images\arrow_right.png" />
+    <Content Include="Content\images\back.png" />
+    <Content Include="Content\images\error.png" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\interaction-rate.png" />
+    <Content Include="Content\images\kpi_content.png" />
+    <Content Include="Content\images\kpi_engagement.png" />
+    <Content Include="Content\images\kpi_kpi.png" />
+    <Content Include="Content\images\kpi_users.png" />
+    <Content Include="Content\images\most-active-users.png" />
+    <Content Include="Content\images\open_separate.png" />
+    <Content Include="Content\images\success.png" />
+    <Content Include="Content\images\warning.png" />
+    <Content Include="Content\tooltipster.css" />
+    <Content Include="Scripts\d3.v3.js" />
+    <Content Include="Scripts\d3.v3.min.js" />
+    <Content Include="Scripts\palantir.treeview.js" />
+    <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\datepicker.init.js" />
+    <Content Include="Scripts\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\jquery.flot.stack.min.js" />
+    <Content Include="Scripts\jquery.tooltipster.js" />
+    <Content Include="Scripts\jquery.tooltipster.min.js" />
+    <Content Include="Scripts\jquery.flot.resize.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\palantir.color.js" />
+    <Content Include="Scripts\palantir.columnar.table.js" />
+    <Content Include="Scripts\palantir.metrics.interactionRate.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\bar-chart.png" />
+    <Content Include="Content\images\calendar.png" />
+    <Content Include="Content\images\compare-groups.png" />
+    <Content Include="Content\images\dashboard.png" />
+    <Content Include="Content\images\export.png" />
+    <Content Include="Content\images\heart.png" />
+    <Content Include="Content\images\pie-chart.png" />
+    <Content Include="Content\images\posts.png" />
+    <Content Include="Content\images\settings.png" />
+    <Content Include="Content\images\sort_asc.png" />
+    <Content Include="Content\images\sort_desc.png" />
+    <Content Include="Content\images\user_account.png" />
+    <Content Include="Content\jqcloud.css" />
+    <Content Include="Content\Main.css" />
+    <Content Include="Content\Narrow.css" />
+    <Content Include="Content\ui.chart.css" />
+    <Content Include="Content\ui.all.css" />
+    <Content Include="Content\ui.base.css" />
+    <Content Include="Content\ui.core.css" />
+    <Content Include="Content\ui.datepicker.css" />
+    <Content Include="Content\ui.theme.css" />
+    <Content Include="Content\UltraNarrow.css" />
+    <Content Include="Content\Wide.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery.flot.curvedLines.js" />
+    <Content Include="Scripts\palantir.metrics.dashboard.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="Scripts\jqcloud-1.0.2.min.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui.1.9.0.min.js" />
+    <Content Include="Scripts\jquery.flot.categories.min.js" />
+    <Content Include="Scripts\palantir.ActiveUsers.LoadCharts.js" />
+    <Content Include="Scripts\palantir.common.ActiveUsers.js" />
+    <Content Include="Scripts\palantir.common.js" />
+    <Content Include="Scripts\palantir.create.project.js" />
+    <Content Include="Scripts\palantir.export.js" />
+    <Content Include="Scripts\palantir.metrics.activeusers.js" />
+    <Content Include="Scripts\palantir.metrics.comparegroups.js" />
+    <Content Include="Scripts\palantir.metrics.posts.js" />
+    <Content Include="Scripts\palantir.metrics.social.js" />
+    <Content Include="Scripts\palantir.metrics.content.js" />
+    <Content Include="Scripts\excanvas.min.js" />
+    <Content Include="Scripts\jquery-1.7.2.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.dataTables.js" />
+    <Content Include="Scripts\jquery.dropdown.js" />
+    <Content Include="Scripts\jquery.flot.js" />
+    <Content Include="Scripts\jquery.flot.pie.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\palantir.chart.js" />
+    <Content Include="Scripts\palantir.piechart.js" />
+    <Content Include="Scripts\palantir.table.js" />
+    <Content Include="Scripts\PopupBox.js" />
+    <Content Include="Scripts\ui.core.js" />
+    <Content Include="Scripts\ui.datepicker-ru.js" />
+    <Content Include="Scripts\ui.datepicker.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\Utils.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.4.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
+    <Content Include="Scripts\jquery-1.4.4-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Navigation\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\Navigation\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Projects\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\Posts.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\Content.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\Social.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\CompareGroups.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\Attitude.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Export\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\About\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Help\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Rules\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VkTests\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\VkTests\GroupInfo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_MetricsLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Projects\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TopEntitiesChart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_ChartDateRangeSelector.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\_DashboardMetrics.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Metrics\_DashboardMetricsEmpty.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_AjaxLoader.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <Content Include="Views\Metrics\_SocialUserInterestsDetails.cshtml" />
+    <Content Include="Views\Metrics\_MostPopularPosts.cshtml" />
+    <Content Include="Views\Metrics\_MostPopularContent.cshtml" />
+    <Content Include="Views\Settings\Index.cshtml" />
+    <Content Include="Views\Metrics\Interests.cshtml" />
+    <Content Include="Views\Metrics\_GroupComparisonTable.cshtml" />
+    <Content Include="Views\Navigation\_Menu_Old.cshtml" />
+    <Content Include="Views\Shared\_Layout_NoRightMenu.cshtml" />
+    <Content Include="Views\Shared\_KPI.cshtml" />
+    <Content Include="Views\Shared\_KPIList.cshtml" />
+    <Content Include="Views\Metrics\ActiveUsers.cshtml" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\palantir.ActiveUsers.UiTagCloudWrapper.js" />
+    <Content Include="Views\Metrics\_InteractionRate.cshtml" />
+    <Content Include="Views\Shared\_AccountMenu.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Scripts\palantir.tooltip.js" />
+    <Content Include="Views\Metrics\Audience.cshtml" />
+    <Content Include="Views\Shared\MemberSubList.cshtml" />
+    <Content Include="Views\Shared\_Layout_Old_Footer.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\List.cshtml" />
+    <Content Include="Views\Shared\_ProgressView.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(SolutionDir)Core\Configs\*.config" $(ProjectDir)
+copy /y "$(SolutionDir)Core\External\PostgreSQL\*.dll" $(TargetDir)
+copy /y "$(SolutionDir)Core\External\Couchbase\*.dll" $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+  <Import Project="$(SolutionDir)\External\CodeMetrics\Ix.Palantir.CodeMetrics.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>copy /y "$(SolutionDir)Core\4.Application\App.Bootstrapper\bin\Debug\*.dll" $(TargetDir)</PreBuildEvent>
+  </PropertyGroup>
+</Project>

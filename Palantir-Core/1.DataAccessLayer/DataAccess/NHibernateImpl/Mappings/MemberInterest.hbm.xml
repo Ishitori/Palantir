@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.DomainModel" namespace="Ix.Palantir.DomainModel">
+
+  <class name="MemberInterest" table="memberinterest" lazy="true" select-before-update="false" dynamic-update="false">
+    <id name="Id" type="Int32" unsaved-value="0">
+      <generator class="sequence">
+        <param name="sequence">memberinterest_id_seq</param>
+      </generator>
+    </id>
+
+    <property name="VkGroupId" type="Int32" />
+    <property name="VkMemberId" type="Int64" />
+
+    <property name="Title" type="String" />
+    <property name="Type" type="Ix.Palantir.DomainModel.MemberInterestType, Ix.Palantir.DomainModel" />
+  </class>
+
+</hibernate-mapping>

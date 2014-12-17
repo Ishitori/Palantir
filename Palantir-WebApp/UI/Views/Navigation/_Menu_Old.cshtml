@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Ix.Palantir.Services.API.MenuItemLink>
+@{
+    Layout = null;
+}
+<ul class="site-menu-actions">
+    @foreach (var item in this.Model)
+    {
+    <li class="site-menu-action">
+        @Html.RouteLink(item.Title, item.RouteValues, new Dictionary<string, object>() { { "class", item.Children.Count > 0 ? "dir" : null } })
+
+        @if (item.Children.Count > 0)
+        {
+            <ul>
+              @foreach (var item2 in item.Children)
+              {
+                  <li class="site-menu-action-l2">
+                     @Html.RouteLink(item2.Title, item2.RouteValues)
+                  </li>
+              }
+            </ul>
+        }
+    </li>
+    }
+</ul>

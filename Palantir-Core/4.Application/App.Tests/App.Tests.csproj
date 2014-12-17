@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97D7D0F5-C5F3-4CC3-9B03-7D28CED9A0C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.App.Tests</RootNamespace>
+    <AssemblyName>Ix.Palantir.App.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.5.8.10295, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\..\External\NUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PostDensityCalculatorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Localization.API\Localization.API.csproj">
+      <Project>{BDA14A5B-5DE1-467A-8944-67CBF66BB5E2}</Project>
+      <Name>Localization.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Querying.Common\Querying.Common.csproj">
+      <Project>{E4CA612A-B60A-45A0-AA89-37B9B6466739}</Project>
+      <Name>Querying.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics.API\Domain.Analytics.API.csproj">
+      <Project>{B43809A7-A4A6-42A8-96AF-AB1299AEEE85}</Project>
+      <Name>Domain.Analytics.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics\Domain.Analytics.csproj">
+      <Project>{B14C7471-AB19-4423-AF23-D14AA0940411}</Project>
+      <Name>Domain.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\DomainModel\DomainModel.csproj">
+      <Project>{53D14A56-5242-4BFC-8B6D-C59A7BE5CB2D}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

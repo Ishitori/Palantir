@@ -1,0 +1,18 @@
+syntax: glob
+Palantir-Backend.suo
+Admin.UI/bin/*
+Admin.UI/Logs/log.log
+Admin.UI/StyleCop.Cache
+Admin.UI/caching-server.config
+Admin.UI/caching.config
+Admin.UI/feed-processing.config
+Admin.UI/file-system.config
+Admin.UI/nhibernate.config
+Admin.UI/nlog.config
+Admin.UI/obj/*
+Admin.UI/queueing.config
+Admin.UI/vk-credentials.config
+Admin.UI/vk-follows.config
+Admin.UI/Admin.UI.Publish.xml
+Admin.UI/Properties/PublishProfiles/Profile1.pubxml.user
+Palantir-Backend.v11.suo

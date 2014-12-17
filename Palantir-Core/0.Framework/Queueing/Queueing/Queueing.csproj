@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D225A83C-20D4-49D1-903B-BDDE2F13BBCE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Queueing</RootNamespace>
+    <AssemblyName>Ix.Palantir.Queueing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Apache.NMS">
+      <HintPath>..\..\..\External\ActiveMQ\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ">
+      <HintPath>..\..\..\External\ActiveMQ\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zlib">
+      <HintPath>..\..\..\External\ActiveMQ\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\CommandMessageMapper.cs" />
+    <Compile Include="Command\CommandRepository.cs" />
+    <Compile Include="Command\CommandReceiver.cs" />
+    <Compile Include="Command\CommandSender.cs" />
+    <Compile Include="ConnectionNameProvider.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Logging\AsyncBuffer.cs" />
+    <Compile Include="Logging\NullQueueingTransportLogger.cs" />
+    <Compile Include="Logging\QueueingLogActionType.cs" />
+    <Compile Include="Logging\QueueingLogItem.cs" />
+    <Compile Include="Logging\QueueingTransportLogger.cs" />
+    <Compile Include="MessageExtension.cs" />
+    <Compile Include="MessageReceivedHandler.cs" />
+    <Compile Include="PooledMessageSender.cs" />
+    <Compile Include="QueueingModule.cs" />
+    <Compile Include="QueueingTracer.cs" />
+    <Compile Include="Redelivery\PolicyBasedRedeliveryStrategy.cs" />
+    <Compile Include="Redelivery\RedeliveryStrategyFactory.cs" />
+    <Compile Include="Redelivery\SchedulerBasedRedeliveryStrategy.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="SessionProvider.cs" />
+    <Compile Include="Message.cs" />
+    <Compile Include="MessageReceiver.cs" />
+    <Compile Include="MessageSender.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Configuration.API\Configuration.API.csproj">
+      <Project>{5E1D9DEF-C326-4CE6-8C67-0B6359198F10}</Project>
+      <Name>Configuration.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\Configuration.csproj">
+      <Project>{91067B13-CD82-4871-8825-CE2BACB82B23}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Exceptions\Exceptions.csproj">
+      <Project>{27BBEEFB-7917-44B9-9831-6B6F7A327694}</Project>
+      <Name>Exceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Logging\Logging.csproj">
+      <Project>{450B8893-9CD4-41AA-882A-447434740E8D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Pooling\Pooling.csproj">
+      <Project>{2A7C74AC-D10A-4D81-A975-4EBFE0DC475C}</Project>
+      <Name>Pooling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Queueing.API\Queueing.API.csproj">
+      <Project>{E0A795BF-350E-4A59-865E-AFF0A540F23C}</Project>
+      <Name>Queueing.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

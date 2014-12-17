@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Наиболее популярные посты";
+}
+@using Ix.Palantir.UI.Extensions
+@model Ix.Palantir.UI.Models.Metrics.PostsViewModel
+           
+<h1>Наиболее популярные посты</h1>
+<div id="mostPopularPostsContainer" data-source="@Url.Action("GetMostPopularPosts", "Posts")">
+    @Html.UiTable(Model.MostPopularPosts, "mostPopularPosts")
+</div>
+
+@section Script{
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.table.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.metrics.posts.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new PostsUiController();
+        });
+    </script>   
+}

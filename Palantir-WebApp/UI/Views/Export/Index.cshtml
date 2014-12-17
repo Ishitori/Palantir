@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_MetricsLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Экспорт данных";
+}
+
+<h1>Экспорт данных</h1>
+<p>Для получения данных за интересующий Вас период, выберите период в календаре и нажмите кнопку "Экспортировать данные".</p>
+
+<div id="exportButtonContainer" data-source="@Url.Action("ExportData", "Export")" data-check="@Url.Action("IsReady", "Export")" data-id="@Model.Project.Id">
+    <input type="button" id="exportDataButton" name="exportData" class="button" value="Экспортировать данные" />
+</div>
+<div id="exportProcessingContainer">
+    @Html.Partial("_AjaxLoader")
+</div>
+<div id="exportResultContainer">
+    <a id="exportResultLink">Скачать файл</a>
+    <div class="error" id="exportFailedMessage">Ошибка! Не удалось экспортировать файл. Попробуйте обновить страницу и запустить экспорт заново.</div>
+</div>
+
+@section Script{
+    <script src="@Url.Content("~/Scripts/palantir.export.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new ExportUiController();
+        });
+    </script>   
+}

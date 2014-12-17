@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2800C09-0CE9-4AB7-8755-255189ACC105}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.DataAccess</RootNamespace>
+    <AssemblyName>Ix.Palantir.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dapper-dot-net">
+      <HintPath>..\..\External\Dapper\dapper-dot-net.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\External\EPPlus\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NHibernate">
+      <HintPath>..\..\External\NHibernate\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataGatewayProvider.cs" />
+    <Compile Include="EntitiesForChartProvider.cs" />
+    <Compile Include="Export\ExportDataProvider.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="MemberAdvancedSearchCache.cs" />
+    <Compile Include="NHibernateImpl\DataGateway.cs" />
+    <Compile Include="NHibernateImpl\DurableDataGateway.cs" />
+    <Compile Include="NHibernateImpl\SessionFactory.cs" />
+    <Compile Include="NHibernateImpl\TransactionScope.cs" />
+    <Compile Include="NHibernateImpl\UnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryArrayBuilder.cs" />
+    <Compile Include="QueryBuilder.cs" />
+    <Compile Include="QueryDateBuilder.cs" />
+    <Compile Include="QueryMemberFilterBuilder.cs" />
+    <Compile Include="Repositories\CachingWrapper\CachingHelper.cs" />
+    <Compile Include="Repositories\CachingWrapper\FeedProcessingCachingStrategy.cs" />
+    <Compile Include="Repositories\CachingWrapper\ExceptionHandler.cs" />
+    <Compile Include="Repositories\CachingWrapper\MemberLikeSharesRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\MemberRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\MemberSubscriptionRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\PhotoRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\PostRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\ProjectRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\TopicRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\CachingWrapper\VideoRepositoryCachingWrapper.cs" />
+    <Compile Include="Repositories\FeedRepository.cs" />
+    <Compile Include="Repositories\ListRepository.cs" />
+    <Compile Include="Repositories\MemberLikeSharesRepository.cs" />
+    <Compile Include="Repositories\MemberSubscriptionRepository.cs" />
+    <Compile Include="Repositories\PhotoRepository.cs" />
+    <Compile Include="Repositories\PlaceRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\TopicRepository.cs" />
+    <Compile Include="Repositories\VideoRepository.cs" />
+    <Compile Include="Repositories\MemberRepository.cs" />
+    <Compile Include="Repositories\VkGroupRepository.cs" />
+    <Compile Include="QueryExtensions.cs" />
+    <Compile Include="StatisticsProviders\MemberAdvancedSearcher.cs" />
+    <Compile Include="StatisticsProviders\EmptingsStrategy\AverageEmptingsStrategy.cs" />
+    <Compile Include="StatisticsProviders\EmptingsStrategy\FillEmptingsStrategyFactory.cs" />
+    <Compile Include="StatisticsProviders\EmptingsStrategy\ZeroEmptingsStrategy.cs" />
+    <Compile Include="StatisticsProviders\Helpers\BirthdayGrouper.cs" />
+    <Compile Include="StatisticsProviders\Helpers\MemberQueryHelper.cs" />
+    <Compile Include="StatisticsProviders\InteractionRateCalculator.cs" />
+    <Compile Include="StatisticsProviders\IrChartDataProvider.cs" />
+    <Compile Include="StatisticsProviders\KpiProvider.cs" />
+    <Compile Include="StatisticsProviders\KpiProviderQueries.cs" />
+    <Compile Include="StatisticsProviders\RawDataProvider.cs" />
+    <Compile Include="StatisticsProviders\StatisticsCalculator.cs" />
+    <Compile Include="StatisticsProviders\StatisticsProvider.cs" />
+    <Compile Include="UnitOfWorkProvider.cs" />
+    <Compile Include="Repositories\ProjectRepository.cs" />
+    <Compile Include="MembersDeltaUpdater.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Caching\Caching.csproj">
+      <Project>{976E5384-9E14-4343-975D-2FB2E240EF77}</Project>
+      <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Configuration.API\Configuration.API.csproj">
+      <Project>{5E1D9DEF-C326-4CE6-8C67-0B6359198F10}</Project>
+      <Name>Configuration.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Configuration\Configuration.csproj">
+      <Project>{91067B13-CD82-4871-8825-CE2BACB82B23}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Localization.API\Localization.API.csproj">
+      <Project>{BDA14A5B-5DE1-467A-8944-67CBF66BB5E2}</Project>
+      <Name>Localization.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\LockServer.API\LockServer.API.csproj">
+      <Project>{6848935B-AF36-4E8F-8F6A-87F66FF64E77}</Project>
+      <Name>LockServer.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Logging\Logging.csproj">
+      <Project>{450B8893-9CD4-41AA-882A-447434740E8D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Querying.Common\Querying.Common.csproj">
+      <Project>{E4CA612A-B60A-45A0-AA89-37B9B6466739}</Project>
+      <Name>Querying.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Queueing\Queueing.API\Queueing.API.csproj">
+      <Project>{E0A795BF-350E-4A59-865E-AFF0A540F23C}</Project>
+      <Name>Queueing.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Utilities\Utilities.csproj">
+      <Project>{C868B974-DF21-433C-B35D-43BAF4FA3911}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics.API\Domain.Analytics.API.csproj">
+      <Project>{B43809A7-A4A6-42A8-96AF-AB1299AEEE85}</Project>
+      <Name>Domain.Analytics.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\DomainModel\DomainModel.csproj">
+      <Project>{53D14A56-5242-4BFC-8B6D-C59A7BE5CB2D}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.API\DataAccess.API.csproj">
+      <Project>{FA2C2E4D-D23D-4666-8B69-FA75BC7CD508}</Project>
+      <Name>DataAccess.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Project.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Post.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\VkGroupReference.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\VkGroupProcessingState.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Account.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="NHibernateImpl\Mappings\ActiveUser.hbm.xml" />
+    <Content Include="NHibernateImpl\Mappings\ActiveUsersInterests.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\MemberSubscription.hbm.xml" />
+    <Content Include="NHibernateImpl\Mappings\VkGroupProcessingHistoryItem.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\VideoComment.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\TopicComment.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Topic.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\City.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Country.hbm.xml" />
+    <Content Include="NHibernateImpl\Mappings\DataFeed.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\MemberInterest.hbm.xml" />
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Member.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Photo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\VkGroup.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\MembersMetaInfo.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Video.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\Administrator.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\PostComment.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NHibernateImpl\Mappings\FeedQueueItem.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NHibernateImpl\Mappings\User.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

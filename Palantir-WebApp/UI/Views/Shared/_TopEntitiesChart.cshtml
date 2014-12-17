@@ -1,0 +1,31 @@
+﻿@model Ix.Palantir.UI.Models.Shared.TopEntriesChartModel
+
+<div class="top-table">
+    <div class="table">
+        <div>
+            <h2>@this.Model.Title</h2>
+        </div>
+        <div class="th">
+            <div class="name">@this.Model.NameColumnTitle</div>
+            <div class="value">@this.Model.ValueColumnTitle</div>
+        </div>
+    
+        @for (int i = 0; i < this.Model.Entities.Count; i++)
+        {
+            <a href="@this.Model.Entities[i].Url" target="_blank">
+                <div class="tr">
+                    <div class="id">
+                        @(i + 1)
+                    </div>
+                    <div class="name">
+                        <span>@this.Model.Entities[i].Title</span>
+                        <span class="1"></span>
+                    </div>
+                    <div class="value">@this.Model.Entities[i].Value</div>
+
+                </div>
+            </a>
+        }
+    </div>
+
+</div>

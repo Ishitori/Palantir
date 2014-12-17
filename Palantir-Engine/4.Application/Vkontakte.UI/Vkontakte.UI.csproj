@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29B19A49-2B1C-4D9A-B210-40C50EF8538B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Vkontakte.UI</RootNamespace>
+    <AssemblyName>Ix.Palantir.Vkontakte.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ix.Palantir.Caching">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DataAccess.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DataAccess.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DomainModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Localization.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Localization.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory.StructureMap">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Queueing.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Queueing.API.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CouchbaseTask.cs" />
+    <Compile Include="EmptyJobQueueTask.cs" />
+    <Compile Include="Entities\DatedEntity.cs" />
+    <Compile Include="FillJobQueueTask.cs" />
+    <Compile Include="GetLikesCount.cs" />
+    <Compile Include="GetMemberSubscriptionsTask.cs" />
+    <Compile Include="GetPhotoAlbumDetailsTask.cs" />
+    <Compile Include="GetPostStats.cs" />
+    <Compile Include="GetVideoCommentsTask.cs" />
+    <Compile Include="GetWallPostTask.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PutDataIntoFeedQueue.cs" />
+    <Compile Include="SavePlacesTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.DomainLayer\Infrastructure.Process\Infrastructure.Process.csproj">
+      <Project>{FA3DE497-AF8B-4FAC-B323-421D985E6DD3}</Project>
+      <Name>Infrastructure.Process</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Vkontakte.API\Vkontakte.API.csproj">
+      <Project>{88134A02-22F8-4223-870B-B0BF30E906CA}</Project>
+      <Name>Vkontakte.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Vkontakte.Workflows\Vkontakte.Workflows.csproj">
+      <Project>{3C48B68A-BC9C-43CD-B1B3-EFDDB4B75BD0}</Project>
+      <Name>Vkontakte.Workflows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine.Bootstrapper\Engine.Bootstrapper.csproj">
+      <Project>{C430A1B3-62B5-4744-8348-D2D976822F01}</Project>
+      <Name>Engine.Bootstrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="nhibernate.config" />
+    <None Include="nlog.config" />
+    <None Include="vk-follows.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(ProjectDir)*.config" $(TargetDir)
+copy /y "$(SolutionDir)Core\Configs\*.config" $(ProjectDir)
+copy /y "$(SolutionDir)Core\External\PostgreSQL\*.dll" $(TargetDir)
+copy /y "$(SolutionDir)Core\External\Couchbase\*.dll" $(TargetDir)</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

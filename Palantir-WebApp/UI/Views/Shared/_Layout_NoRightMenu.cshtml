@@ -1,0 +1,146 @@
+﻿@using Ix.Palantir.UI.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Main.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Wide.css")" media="screen and (max-width: 1024px)" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/Narrow.css")" media="screen and (max-width: 700px)" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/UltraNarrow.css")" media="screen and (max-width: 480px)" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/tooltipster.css")" />
+    @RenderSection("Styles", false)
+
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="@Url.Content("~/Scripts/excanvas.min.js")"></script><![endif]-->
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js" )" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.1.9.0.min.js" )" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.blockUI.js" )" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/main.js" )" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.common.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.tooltipster.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/Utils.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/PopupBox.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/date.js")" type="text/javascript"></script>
+
+    @if (GlobalModel.IsYandexMetricsEnabled)
+    {
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter21663574 = new Ya.Metrika({
+                            id: 21663574,
+                            webvisor: true,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true
+                        });
+                    } catch (e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/21663574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    }
+
+    @RenderSection("Script", false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            @{if (this.Request.IsAuthenticated) {
+                <text>
+                    var projectSelector = new PopupBox( { targetId: "projectSelector", boxId: "projectSelectorBox" });
+                    var userActionsSelector = new PopupBox( { targetId: "userActionsSelector", boxId: "userActionsBox" });
+                </text>
+                }
+            }
+
+            @{ if (!IsSectionDefined("projectListMenu")) { 
+                <text>
+                    $.get('@Url.Action("GetProjectList", "Projects")', function (data) {
+                        if (data.length > 0) {
+                            $.each(data, function (i, v) {
+                                if (v && v.Id) {
+                                    $('.projectList ul').append('<li><a href="/projects/' + v.Id + '/dashboard"><div>' + v.Title + '</div></a></li>');
+                                }
+                            });
+                        }
+                    });
+
+                    var defMenuText = 'Выберите группу ';
+                    defMenuText += '<img class="" src="@Url.Content("~/Content/images/arrow_down.png")" />';
+
+                    $("#projectSelector").html(defMenuText);
+                </text>
+                }
+            }
+        });
+    </script>
+</head>
+    <body>
+        <div id="page">
+            <div class="header overlayed">
+                <a href="/"><span class="title">Barberry</span></a>
+                
+                @if (this.Request.IsAuthenticated)
+                {
+                    <div class="currentProject">
+                        <a id="projectSelector" class="headerBtn">
+                            @RenderSection("selectedProjectTitle", false)
+                            <img class="" src="@Url.Content("~/Content/images/arrow_down.png")" />
+                        </a>
+                    </div>
+
+                    <a id="userActionsSelector" class="login headerBtn">
+                        <img class="" src="@Url.Content("~/Content/images/user_account.png")" />
+                    </a>
+                }
+            </div>
+
+            <div class="section content clearfix">
+
+                <div class="main">
+                    <div class="mainContainer">
+                        @RenderBody()
+                    </div>
+                </div>
+
+                <div class="rightColumn">
+                </div>
+            </div>
+
+            <div id="footerMargin"></div>
+        </div>
+
+        <div class="footer overlayedTop">
+            @Html.Partial("_Footer")
+        </div>
+
+        <div class="popbox popboxView projectList" id="projectSelectorBox">
+            <div class='box'>
+                <ul>
+                    @RenderSection("projectListMenu", false)
+                </ul>
+            </div>
+        </div>
+
+        @if (this.Request.IsAuthenticated)
+        {
+            @Html.Partial("_AccountMenu")
+        }
+    </body>
+</html>

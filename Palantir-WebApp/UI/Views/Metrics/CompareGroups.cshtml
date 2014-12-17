@@ -1,0 +1,32 @@
+﻿@model Ix.Palantir.UI.Models.Metrics.CompareGroupsInitViewModel
+@using Ix.Palantir.UI.Extensions
+
+@{
+    ViewBag.Title = "Сравнение групп";
+}
+
+<h2>Конкуренты</h2>
+@Html.CheckBoxList("concurrentsOptions", "concurrentOptions", "concurrentsSelection clearfix", this.Model.PossibleConcurrents, "Title", "Id", this.Model.ConcurrentIds)
+
+<div id="concurrentButtonContainer" data-source="@Url.Action("CompareGroups", "CompareGroups")">
+    <input type="button" id="concurrentButton" name="concurrentButton" class="button" value="Сравнить" />
+</div>
+
+<div id="comparisonProcessingContainer">
+    @Html.Partial("_AjaxLoader")
+</div>
+
+<div id="comparisonResultContainer">
+    <div class="error" id="comparisonFailedMessage">Ошибка! Не удалось сравнить группы. Попробуйте перезагрузить страницу и запустить сравнение заново.</div>
+</div>
+
+@section Script{                                                     
+    <script src="@Url.Content("~/Scripts/palantir.metrics.comparegroups.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.color.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.columnar.table.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new CompareGroupsUiController();
+        });
+    </script>
+}            

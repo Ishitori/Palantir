@@ -1,0 +1,9 @@
+﻿@model Ix.Palantir.UI.Models.Shared.KpiValueModel
+
+<div class="kpi">
+    <div class="kpi-header">@Model.Title</div>
+    <div class="kpi-value">@Model.Value</div>
+    @if (!string.IsNullOrWhiteSpace(Model.DetailsUrl)) {
+        <div class="kpi-footer"><a href="@Model.DetailsUrl">детали</a></div>
+    }
+</div>

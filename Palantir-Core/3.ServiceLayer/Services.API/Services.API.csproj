@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{06E35176-C4E9-4E1D-9077-9E2A1D89144B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Services.API</RootNamespace>
+    <AssemblyName>Ix.Palantir.Services.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\packages\AutoMapper.2.2.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveUserInfo.cs" />
+    <Compile Include="Analytics\ComparativeModel.cs" />
+    <Compile Include="Analytics\ConcurrentAnalysisIntroModel.cs" />
+    <Compile Include="Analytics\ConcurrentAnalysisModel.cs" />
+    <Compile Include="Analytics\IConcurrentAnalysisService.cs" />
+    <Compile Include="Analytics\RankedModel.cs" />
+    <Compile Include="Analytics\UserStatistics.cs" />
+    <Compile Include="ContentEntityInfo.cs" />
+    <Compile Include="CreateProject\CreateProjectResult.cs" />
+    <Compile Include="CreateProject\CreateProjectStatus.cs" />
+    <Compile Include="DTO\BirthDate.cs" />
+    <Compile Include="DTO\EducationLevel.cs" />
+    <Compile Include="DTO\Gender.cs" />
+    <Compile Include="EntityInfo.cs" />
+    <Compile Include="Export\ExportExecutionResult.cs" />
+    <Compile Include="Export\ExportSchedulingResult.cs" />
+    <Compile Include="Export\IExportService.cs" />
+    <Compile Include="Analytics\IAnalyticsService.cs" />
+    <Compile Include="GroupProcessingItem.cs" />
+    <Compile Include="IAccountService.cs" />
+    <Compile Include="IMemberAdvancedSearchService.cs" />
+    <Compile Include="IMetricsService.cs" />
+    <Compile Include="INavigationService.cs" />
+    <Compile Include="IProjectService.cs" />
+    <Compile Include="IQueryBuilder.cs" />
+    <Compile Include="ISettingsService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="MemberInterestsObject.cs" />
+    <Compile Include="MemberSubInfo.cs" />
+    <Compile Include="MenuItemLink.cs" />
+    <Compile Include="Metrics\AgeInformation.cs" />
+    <Compile Include="Metrics\CountryCityInformation.cs" />
+    <Compile Include="Metrics\TypeOfContentDataInfo.cs" />
+    <Compile Include="Metrics\EducationLevelInformation.cs" />
+    <Compile Include="Metrics\LRCDiagramDataInfo.cs" />
+    <Compile Include="Metrics\SocialMetrics.cs" />
+    <Compile Include="Metrics\DashboardMetrics.cs" />
+    <Compile Include="Metrics\GenderInformation.cs" />
+    <Compile Include="Metrics\PostsMetrics.cs" />
+    <Compile Include="Metrics\UserMetrics.cs" />
+    <Compile Include="PopularCityInfo.cs" />
+    <Compile Include="PostDensity.cs" />
+    <Compile Include="PostEntityInfo.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="Metrics\MetricsBase.cs" />
+    <Compile Include="ProjectDetails.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AccountInfo.cs" />
+    <Compile Include="Security\UserInfo.cs" />
+    <Compile Include="VkMemberInfo.cs" />
+    <Compile Include="VkMemberInterest.cs" />
+    <Compile Include="VkGroupInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Querying.Common\Querying.Common.csproj">
+      <Project>{E4CA612A-B60A-45A0-AA89-37B9B6466739}</Project>
+      <Name>Querying.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Security.API\Security.API.csproj">
+      <Project>{99AC1291-06B8-4C05-86CE-7096684FFA05}</Project>
+      <Name>Security.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

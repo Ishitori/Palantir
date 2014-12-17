@@ -1,0 +1,8 @@
+syntax: glob
+*/bin/*
+*/obj/*
+StyleCop.Cache
+*.csproj.user
+*.suo
+Palantir-Core.sln.DotSettings.user
+*.orig

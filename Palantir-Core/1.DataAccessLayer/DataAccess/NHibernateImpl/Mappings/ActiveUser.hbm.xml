@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.DomainModel" namespace="Ix.Palantir.DomainModel">
+
+  <class name="ActiveUser" table="users" lazy="true" select-before-update="false" dynamic-update="false">
+    <id name="Id" type="Int64" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+
+    <property name="UserName" type="String" column="UserName" />
+    <property name="CommentCount" type="Int32" column="CommentCount" />
+    <property name="PostCount" type="Int32" column="PostCount" />
+    <property name="LikeCount" type="Int32" column="LikeCount" />
+    <property name="ShareCount" type="Int32" column="ShareCount" />
+
+
+  </class>
+
+</hibernate-mapping>

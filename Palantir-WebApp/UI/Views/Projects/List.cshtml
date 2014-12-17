@@ -1,0 +1,31 @@
+﻿@model Ix.Palantir.UI.Models.ProjectListModel
+
+@{
+    ViewBag.Title = "Мои группы";
+}
+
+<div class="beforeHeaderContainer">
+  <a class="addProject" href="@Url.Action("Create", "Projects")">Добавить новую группу</a>
+</div>
+
+<h2>Мои группы</h2>
+
+<table id="projectList" class="dataTable">
+    <tr>
+        <th class="group-name">Группа</th>
+        <th class="ui-table-datetime">Создана</th>
+        <th class="ui-table-datetime">Последний пост</th>
+    </tr>
+    @for (int i = 0; i < this.Model.Projects.Count; i++)
+    {
+        var project = this.Model.Projects[i];
+        <tr class="@(i % 2 == 0 ? "even" : "odd")">
+            <td>
+                <a href="@this.Url.Action("index", "dashboard", new { id = project.Id })">@project.Title</a>
+                <a href="@project.Url" target="_blank"><img src="/Content/images/open_separate.png" /></a>
+            </td>
+            <td class="ui-td-datetime"><span class="date">@project.CreationDate</span><span class="time">@project.CreationTime</span></td>
+            <td class="ui-td-datetime last"><span class="date">@project.LastPostDate</span><span class="time">@project.LastPostTime</span></td>
+        </tr>
+    }
+</table>

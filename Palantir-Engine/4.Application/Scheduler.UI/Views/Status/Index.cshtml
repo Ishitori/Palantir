@@ -1,0 +1,16 @@
+﻿@model Ix.Palantir.Scheduler.UI.Models.StatusModel
+@{
+    ViewBag.Title = "Контроллер переодических процессов";
+}
+
+<div class="statusMessage">
+    @Html.Label(this.Model.ServiceStatusMessage)
+</div>
+<div class="actionPanel">
+    @{ Html.BeginForm("StartProcessing", "Status"); }
+        <input type="submit" name="ChangeQueueListeningState" @(this.Model.IsSchedulerRunning ? "disabled='disabled'" : string.Empty) value="Запустить переодические процессы" />
+    @{ Html.EndForm(); }
+    @{ Html.BeginForm("StopProcessing", "Status"); }
+        <input type="submit" name="ChangeQueueListeningState" @(this.Model.IsSchedulerStopped ? "disabled='disabled'" : string.Empty)  value="Остановить переодические процессы" />
+    @{ Html.EndForm(); }
+</div>

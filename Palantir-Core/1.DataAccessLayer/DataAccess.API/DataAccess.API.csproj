@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA2C2E4D-D23D-4666-8B69-FA75BC7CD508}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.DataAccess.API</RootNamespace>
+    <AssemblyName>Ix.Palantir.DataAccess.API</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Export\IExportDataProvider.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IEntitiesForChartProvider.cs" />
+    <Compile Include="IMemberAdvancedSearchCache.cs" />
+    <Compile Include="IMembersDeltaUpdater.cs" />
+    <Compile Include="IQueryBuilder.cs" />
+    <Compile Include="IDataGateway.cs" />
+    <Compile Include="IDataGatewayProvider.cs" />
+    <Compile Include="IDurableDataGateway.cs" />
+    <Compile Include="IPersistentDataGatewayProvider.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkProvider.cs" />
+    <Compile Include="Repositories\Changes\MemberChangeContext.cs" />
+    <Compile Include="Repositories\IFeedProcessingCachingStrategy.cs" />
+    <Compile Include="Repositories\IListRepository.cs" />
+    <Compile Include="Repositories\IMemberSubscriptionRepository.cs" />
+    <Compile Include="Repositories\IMemberLikeSharesRepository.cs" />
+    <Compile Include="Repositories\IPlaceRepository.cs" />
+    <Compile Include="Repositories\ITopicRepository.cs" />
+    <Compile Include="Repositories\IVideoRepository.cs" />
+    <Compile Include="Repositories\IPhotoRepository.cs" />
+    <Compile Include="Repositories\IFeedRepository.cs" />
+    <Compile Include="Repositories\IPostRepository.cs" />
+    <Compile Include="Repositories\IProjectRepository.cs" />
+    <Compile Include="ITransactionScope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IMemberRepository.cs" />
+    <Compile Include="Repositories\IVkGroupRepository.cs" />
+    <Compile Include="StatisticsProviders\DTO\AudienceFilteringResult.cs" />
+    <Compile Include="StatisticsProviders\DTO\KPI.cs" />
+    <Compile Include="StatisticsProviders\DTO\MemberMainInfo.cs" />
+    <Compile Include="StatisticsProviders\DTO\MemberSubscriptionInfo.cs" />
+    <Compile Include="StatisticsProviders\IMemberAdvancedSearcher.cs" />
+    <Compile Include="StatisticsProviders\IFillEmptingsStrategy.cs" />
+    <Compile Include="StatisticsProviders\IKpiProvider.cs" />
+    <Compile Include="StatisticsProviders\IRawDataProvider.cs" />
+    <Compile Include="StatisticsProviders\IIrChartDataProvider.cs" />
+    <Compile Include="StatisticsProviders\IStatisticsProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Querying.Common\Querying.Common.csproj">
+      <Project>{E4CA612A-B60A-45A0-AA89-37B9B6466739}</Project>
+      <Name>Querying.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Queueing\Queueing.API\Queueing.API.csproj">
+      <Project>{E0A795BF-350E-4A59-865E-AFF0A540F23C}</Project>
+      <Name>Queueing.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics.API\Domain.Analytics.API.csproj">
+      <Project>{B43809A7-A4A6-42A8-96AF-AB1299AEEE85}</Project>
+      <Name>Domain.Analytics.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\DomainModel\DomainModel.csproj">
+      <Project>{53D14A56-5242-4BFC-8B6D-C59A7BE5CB2D}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

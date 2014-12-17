@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.DomainModel" namespace="Ix.Palantir.DomainModel">
+
+  <class name="VkGroupReference" table="vkgroupreference" lazy="true" select-before-update="false" dynamic-update="false">
+    <id name="VkGroupId" type="Int32" unsaved-value="0">
+      <generator class="native"/>
+    </id>
+
+    <property name="NameGroup" type="String" />
+    <property name="ScreenName" type="String" />
+    <property name="Photo" type="String" />
+
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C430A1B3-62B5-4744-8348-D2D976822F01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Engine.Bootstrapper</RootNamespace>
+    <AssemblyName>Ix.Palantir.Engine.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ix.Palantir.Caching.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Caching.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Configuration.API, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Ix.Palantir.Configuration.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Configuration.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DataAccess.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DataAccess.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Domain.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Domain.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Framework.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Framework.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory.StructureMap">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Queueing.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Queueing.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Security.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Security.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Services.Bootstrapper">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Services.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EngineResolver.cs" />
+    <Compile Include="ObjectFactoryControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Configuration\Configuration.csproj">
+      <Project>{8C5C6CF9-A985-4A08-869F-CA96AC8AEF34}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Bootstrapper\Domain.Bootstrapper.csproj">
+      <Project>{AED89D53-49B4-4D8C-BA1B-89644123D5E5}</Project>
+      <Name>Domain.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3.ServiceLayer\Services.Bootstrapper\Services.Bootstrapper.csproj">
+      <Project>{1393F465-2A7E-42ED-810E-4AECE67D31DC}</Project>
+      <Name>Services.Bootstrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

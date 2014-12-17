@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C48B68A-BC9C-43CD-B1B3-EFDDB4B75BD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Vkontakte.Workflows</RootNamespace>
+    <AssemblyName>Ix.Palantir.Vkontakte.Workflows</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ix.Palantir.Configuration">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Configuration.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Configuration.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DataAccess.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DataAccess.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.DomainModel">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Localization.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Localization.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Logging">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.ObjectFactory">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.ObjectFactory.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Queueing.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Queueing.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Utilities">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FeedProcessor\AdministratorsFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\IFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\IProcessingStrategy.cs" />
+    <Compile Include="FeedProcessor\IProcessorFactory.cs" />
+    <Compile Include="FeedProcessor\MemberLikesFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\MembersCountFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\MembersFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\MemberSharesFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\MemberSubscriptionFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\PhotoAlbumDetailsFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\PhotoFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\ProcessingStrategy.cs" />
+    <Compile Include="FeedProcessor\ProcessorFactory.cs" />
+    <Compile Include="FeedProcessor\TopicCommentFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\TopicFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\VideoCommentFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\VideoFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\VideoLikesFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\WallPostCommentFeedProcessor.cs" />
+    <Compile Include="FeedProcessor\WallPostFeedProcessor.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Providers\AdminsFeedProvider.cs" />
+    <Compile Include="Providers\IProvidingStrategy.cs" />
+    <Compile Include="Providers\MemberLikesFeedProvider.cs" />
+    <Compile Include="Providers\MembersCountFeedProvider.cs" />
+    <Compile Include="Providers\MemberSharesFeedProvider.cs" />
+    <Compile Include="Providers\MemberSubscriptionFeedProvider.cs" />
+    <Compile Include="Providers\PhotoAlbumDetailsFeedProvider.cs" />
+    <Compile Include="Providers\ProvidingStrategy.cs" />
+    <Compile Include="Providers\TopicCommentFeedProvider.cs" />
+    <Compile Include="Providers\TopicFeedProvider.cs" />
+    <Compile Include="Providers\VideoCommentFeedProvider.cs" />
+    <Compile Include="Providers\VideoFeedProvider.cs" />
+    <Compile Include="Providers\IFeedProvider.cs" />
+    <Compile Include="Providers\MembersFeedProvider.cs" />
+    <Compile Include="Providers\PhotoFeedProvider.cs" />
+    <Compile Include="Providers\VideoLikesFeedProvider.cs" />
+    <Compile Include="Providers\WallPostCommentsFeedProvider.cs" />
+    <Compile Include="Providers\WallPostFeedProvider.cs" />
+    <Compile Include="Processes\VkDataFeedsParserProcess.cs" />
+    <Compile Include="Processes\GetFeedsFromVkProcess.cs" />
+    <Compile Include="Providers\GroupInfoProvider.cs" />
+    <Compile Include="Providers\IGroupInfoProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectorBuilder.cs" />
+    <Compile Include="VkMappers\IMemberMapper.cs" />
+    <Compile Include="VkMappers\IMemberVersionProvider.cs" />
+    <Compile Include="VkMappers\MemberInterestEqualityComparer.cs" />
+    <Compile Include="VkMappers\MemberMapper.cs" />
+    <Compile Include="VkMappers\MemberVersionProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vkontakte.API\Vkontakte.API.csproj">
+      <Project>{88134A02-22F8-4223-870B-B0BF30E906CA}</Project>
+      <Name>Vkontakte.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

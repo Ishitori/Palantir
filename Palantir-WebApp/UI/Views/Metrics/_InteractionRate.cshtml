@@ -1,0 +1,24 @@
+﻿@using Ix.Palantir.UI.Extensions
+@{
+    ViewBag.Title = "Анализ вовлеченности";
+}
+
+<h2>Динамика Interaction Rate</h2>
+<div class="info" id="chartMessage" style="display: none"></div>
+@Html.UiChart("interactionRateChart", Url.Action("Chart", "InteractionRate"))
+
+<h2>Среднее количество реакций на один пост (по типам поста)</h2>
+@Html.UiChart("averageCountChart", Url.Action("GetAverageCount", "InteractionRate"))
+
+<h2>Распределение участников по количеству действий</h2>
+@Html.UiChart("interactionFrequencyChart", Url.Action("GetFrequencyChart", "InteractionRate"))
+
+@section Script{
+    <script src="@Url.Content("~/Scripts/palantir.metrics.interactionRate.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.flot.orderBars.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new InteractionRateUiController();
+        });
+    </script>   
+}

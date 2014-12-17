@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1CF628D-CC34-4274-B770-8686505A6A84}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.DataAccess.Bootstrapper</RootNamespace>
+    <AssemblyName>Ix.Palantir.DataAccess.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\External\StructureMap\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccessRegistry.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Caching\Caching.csproj">
+      <Project>{976E5384-9E14-4343-975D-2FB2E240EF77}</Project>
+      <Name>Caching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Configuration.API\Configuration.API.csproj">
+      <Project>{5E1D9DEF-C326-4CE6-8C67-0B6359198F10}</Project>
+      <Name>Configuration.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Configuration\Configuration.csproj">
+      <Project>{91067B13-CD82-4871-8825-CE2BACB82B23}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Localization.API\Localization.API.csproj">
+      <Project>{BDA14A5B-5DE1-467A-8944-67CBF66BB5E2}</Project>
+      <Name>Localization.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\LockServer.API\LockServer.API.csproj">
+      <Project>{6848935B-AF36-4E8F-8F6A-87F66FF64E77}</Project>
+      <Name>LockServer.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Logging\Logging.csproj">
+      <Project>{450B8893-9CD4-41AA-882A-447434740E8D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory.StructureMap\ObjectFactory.StructureMap.csproj">
+      <Project>{B492E976-C465-42A8-AAA6-5885AFDAE81B}</Project>
+      <Name>ObjectFactory.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics.API\Domain.Analytics.API.csproj">
+      <Project>{B43809A7-A4A6-42A8-96AF-AB1299AEEE85}</Project>
+      <Name>Domain.Analytics.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Analytics\Domain.Analytics.csproj">
+      <Project>{B14C7471-AB19-4423-AF23-D14AA0940411}</Project>
+      <Name>Domain.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\DomainModel\DomainModel.csproj">
+      <Project>{53d14a56-5242-4bfc-8b6d-c59a7be5cb2d}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess.API\DataAccess.API.csproj">
+      <Project>{FA2C2E4D-D23D-4666-8B69-FA75BC7CD508}</Project>
+      <Name>DataAccess.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{A2800C09-0CE9-4AB7-8755-255189ACC105}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

@@ -1,0 +1,48 @@
+﻿@model IList<Ix.Palantir.UI.Models.Shared.UiTableColumn>
+
+@{
+    Layout = null;
+}
+
+@using Ix.Palantir.UI.Extensions
+
+@Html.UiColumnTable(Model, "groupComparation")
+<span>* - параметр не зависит от временного интервала</span>
+
+    <script type="text/javascript">
+        $(function () {
+            new UiColumnTable('#groupComparation');
+            var tooltip4 = {
+                tooltipContainer: "#row4", //Id or class
+                options: {
+                    content: "Показывает уровень взаимодействия пользователей группы с контентом. <a href='http://barberry.pro' target='_blank'>Подробнее &rsaquo;</a>",
+                }
+            };
+
+            var tooltip5 = {
+                tooltipContainer: "#row5", //Id or class
+                options: {
+                    content: "Response rate = (количество постов пользователей с ответами администраторов группы) / (общее количество постов пользователей). <br />Показатель отражает уровень взаимодействия администраторов группы с постами пользователей. <br />Значение Response rate зависит от выбираемого периода.",
+                }
+            };
+
+            var tooltip6 = {
+                tooltipContainer: "#row6", //Id or class
+                options: {
+                    content: "Response time = среднее количество времени, прошедшее с момента публикации поста пользователя до первого комментария администратора группы к этому посту. <br />Показатель учитывает только те посты пользователей, к которым были комментарии администраторов. <br />Значение Response time зависит от выбираемого периода.",
+                }
+            };
+
+            var tooltip18 = {
+                tooltipContainer: "#row18", //Id or class
+                options: {
+                    content: "Отражает день недели и временной интервал, в течение которого было опубликовано наибольшее количество постов. <br />Значение показателя усредняется в зависимости от выбираемого периода. Таким образом, при выборе анализируемого периода «за день», показатель отражает часы наибольшего количества постов за последние 24 часа. <br />При выборе анализируемого периода «за неделю», «за месяц», «за год», «за другой период» показатель отражает день недели и часы наибольшего количества постов за этот период.",
+                }
+            };
+
+            var tooltips = [tooltip4, tooltip5, tooltip6, tooltip18];
+            for (var i in tooltips) {
+                new ToolTipLoader(tooltips[i].tooltipContainer, tooltips[i].options);
+            }
+        });
+    </script>

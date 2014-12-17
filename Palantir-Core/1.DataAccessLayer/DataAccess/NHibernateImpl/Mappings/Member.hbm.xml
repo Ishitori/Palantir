@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.DomainModel" namespace="Ix.Palantir.DomainModel">
+
+  <class name="Member" table="member" lazy="true" select-before-update="false" dynamic-update="false">
+
+    <composite-id>
+      <key-property name="VkGroupId" type="Int32" />
+      <key-property name="VkMemberId" type="Int64" />
+    </composite-id>
+
+    <property name="Name" type="String" />
+    <property name="Gender" type="Ix.Palantir.DomainModel.Gender, Ix.Palantir.DomainModel" />
+    <property name="MaritalStatus" type="Ix.Palantir.DomainModel.MemberMaritalStatus, Ix.Palantir.DomainModel" />
+    <component name="BirthDate" class="Ix.Palantir.DomainModel.BirthDate, Ix.Palantir.DomainModel">
+      <property name="BirthDay" type="Int32" />
+      <property name="BirthMonth" type="Int32" />
+      <property name="BirthYear" type="Int32" />
+    </component>
+    <property name="CityId" type="Int32" />
+    <property name="CountryId" type="Int32" />
+    <property name="Status" type="Ix.Palantir.DomainModel.MemberStatus, Ix.Palantir.DomainModel" />
+    <property name="Education" type="Ix.Palantir.DomainModel.EducationLevel, Ix.Palantir.DomainModel" />
+    <property name="IsDeleted" type="Boolean" />
+    
+    <bag name="Interests" inverse="true" cascade="all-delete-orphan" lazy="false">
+      <key>
+        <column name="VkGroupId" />
+        <column name="VkMemberId" />
+      </key>
+      <one-to-many class="MemberInterest" />
+    </bag> 
+  </class>
+
+</hibernate-mapping>

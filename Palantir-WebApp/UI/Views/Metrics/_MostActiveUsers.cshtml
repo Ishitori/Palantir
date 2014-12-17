@@ -1,0 +1,8 @@
+﻿@model Ix.Palantir.UI.Models.Metrics.ActiveUserViewModel
+@{
+    Layout = null;
+}
+
+@using Ix.Palantir.UI.Extensions
+
+@Html.UiTable(Model.MostActiveUsers, "mostActiveUsers")

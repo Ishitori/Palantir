@@ -1,0 +1,28 @@
+﻿@using Ix.Palantir.UI.Extensions
+@model Ix.Palantir.UI.Models.Shared.ChartDateRangeSelectorModel
+
+<div id="@Model.ContainerId" style="display: none">
+    @{ Html.BeginForm("Chart", "Dashboard", FormMethod.Get); }
+    @Html.ValidationSummary()
+    @Html.Label(" с ")
+    @Html.DatePicker(Model.StartDateId, "/Content/images/calendar.gif", Model.StartDate)
+    @Html.Label(" по ")
+    @Html.DatePicker(Model.EndDateId, "/Content/images/calendar.gif", Model.EndDate)
+    <input id="@Model.ButtonId" type="button" value=">>" />
+    @{ Html.EndForm(); }
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var chartContainer = $("#@Model.ChartContainerId");
+
+        $("#@Model.ButtonId").click(function() {
+            var url = '@Url.Action(@Model.Action)' + "?startDate=" + Palantir.getDate("@Model.StartDateId") + "&endDate=" + Palantir.getDate("@Model.EndDateId");
+            $.post(url, {}, function (chart) {
+                chartContainer.chart(chart);
+            });
+        });
+
+    });
+
+</script>

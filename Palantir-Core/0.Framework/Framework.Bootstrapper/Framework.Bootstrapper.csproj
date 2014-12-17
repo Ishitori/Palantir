@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C76E981-3F98-4931-8DB6-1F2ED62CA1FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Framework.Bootstrapper</RootNamespace>
+    <AssemblyName>Ix.Palantir.Framework.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\External\StructureMap\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrameworkRegistry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration.API\Configuration.API.csproj">
+      <Project>{5E1D9DEF-C326-4CE6-8C67-0B6359198F10}</Project>
+      <Name>Configuration.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Configuration\Configuration.csproj">
+      <Project>{91067B13-CD82-4871-8825-CE2BACB82B23}</Project>
+      <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileSystem.API\FileSystem.API.csproj">
+      <Project>{7238B654-977E-4E51-8C3F-2A8F51984782}</Project>
+      <Name>FileSystem.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileSystem\FileSystem.csproj">
+      <Project>{966C6534-4E7D-4884-8746-119B2ECA28E0}</Project>
+      <Name>FileSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Localization.API\Localization.API.csproj">
+      <Project>{BDA14A5B-5DE1-467A-8944-67CBF66BB5E2}</Project>
+      <Name>Localization.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Localization\Localization.csproj">
+      <Project>{F79C8365-1FD3-486B-8D72-D35B6253B70C}</Project>
+      <Name>Localization %280.Framework\Localization\Localization%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LockServer.API\LockServer.API.csproj">
+      <Project>{6848935B-AF36-4E8F-8F6A-87F66FF64E77}</Project>
+      <Name>LockServer.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LockServer\LockServer.csproj">
+      <Project>{48af6429-275f-4bf6-a944-4ea858f48980}</Project>
+      <Name>LockServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logging\Logging.csproj">
+      <Project>{450B8893-9CD4-41AA-882A-447434740E8D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectFactory.StructureMap\ObjectFactory.StructureMap.csproj">
+      <Project>{B492E976-C465-42A8-AAA6-5885AFDAE81B}</Project>
+      <Name>ObjectFactory.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{C868B974-DF21-433C-B35D-43BAF4FA3911}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

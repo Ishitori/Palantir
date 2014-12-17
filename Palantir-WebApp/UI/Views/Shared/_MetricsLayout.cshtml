@@ -1,0 +1,72 @@
+﻿@using Ix.Palantir.Services.API
+@using Ix.Palantir.UI.Models
+@model Ix.Palantir.UI.Models.Metrics.MetricsViewModel
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+@section Script
+{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ui.datepicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.flot.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.flot.resize.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.flot.pie.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.flot.curvedLines.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.flot.stack.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/palantir.chart.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/palantir.piechart.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/palantir.common.js")"></script>
+    @RenderSection("Script", false)
+    @if (GlobalModel.IsYandexMetricsEnabled)
+    {
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (d, w, c) {
+                (w[c] = w[c] || []).push(function () {
+                    try {
+                        w.yaCounter21663574 = new Ya.Metrika({
+                            id: 21663574,
+                            webvisor: true,
+                            clickmap: true,
+                            trackLinks: true,
+                            accurateTrackBounce: true
+                        });
+                    } catch (e) { }
+                });
+
+                var n = d.getElementsByTagName("script")[0],
+                    s = d.createElement("script"),
+                    f = function () { n.parentNode.insertBefore(s, n); };
+                s.type = "text/javascript";
+                s.async = true;
+                s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else { f(); }
+            })(document, window, "yandex_metrika_callbacks");
+        </script>
+        <noscript><div><img src="//mc.yandex.ru/watch/21663574" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+        <!-- /Yandex.Metrika counter -->
+    }
+}
+
+@section Styles {
+    @RenderSection("Styles", false)
+}
+
+@section projectListMenu {
+    @foreach (Project project in Model.ProjectList)
+    {
+        if (project.Id != Model.Project.Id)
+        {
+            <li><a href="@Url.Action(ViewContext.RouteData.Values["action"].ToString(), new { id = project.Id })"><div>@project.Title</div></a></li>
+        }
+    }    
+    @RenderSection("projectListMenu", false)
+}
+
+@section selectedProjectTitle {
+    @Model.Project.Title
+    @RenderSection("selectedProjectTitle", false)
+}
+
+@RenderBody()
+

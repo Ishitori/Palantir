@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<feed-processing 
+	monthToFetch="1" 
+	feedFilter="IxDataFeedType = 'MembersInfo'" 
+	useGroupFilter="false" 
+	groupQueueId = ""
+	inputQueueId = "FeedDataQueue"
+	outputQueueId = ""
+	TtlInMinutes = "60"
+/>

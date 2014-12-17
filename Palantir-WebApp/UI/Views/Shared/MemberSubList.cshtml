@@ -1,0 +1,24 @@
+﻿@model IList<Ix.Palantir.Services.API.MemberSubInfo>
+
+@if (this.Model.Count > 0)
+ {    
+     <table id="subList" class="dataTable">
+         <tr>
+             <th>Аватар группы</th>
+             <th>Группа</th>
+             <th>Количество участников выбранной ЦА</th>
+         </tr>
+         @for (int i = 0; i < this.Model.Count; i++)
+         {
+         <tr class="@(i % 2 == 0 ? "even" : "odd")">
+             <td><img class="groupAvatar" src="@this.Model[i].Image"/></td>
+             <td><a href=@this.Model[i].Url target="_blank">@this.Model[i].Name</a></td>
+             <td>@this.Model[i].Count</td>
+         </tr>
+         }
+     </table>
+}
+else
+{
+     <div id="message" class="info"><p>Нет данных</p></div>
+}

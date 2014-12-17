@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C4C1D2A-1F18-40E6-80B3-DB1955056184}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.App.Bootstrapper</RootNamespace>
+    <AssemblyName>Ix.Palantir.App.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ObjectFactoryControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIResolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Caching.Bootstrapper\Caching.Bootstrapper.csproj">
+      <Project>{C1752188-103E-4269-998C-93773F46EF92}</Project>
+      <Name>Caching.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Configuration.Bootstrapper\Configuration.Bootstrapper.csproj">
+      <Project>{3D15A8CD-DD07-4B86-9214-F3EA6E7BEF5A}</Project>
+      <Name>Configuration.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Framework.Bootstrapper\Framework.Bootstrapper.csproj">
+      <Project>{0C76E981-3F98-4931-8DB6-1F2ED62CA1FF}</Project>
+      <Name>Framework.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory.StructureMap\ObjectFactory.StructureMap.csproj">
+      <Project>{B492E976-C465-42A8-AAA6-5885AFDAE81B}</Project>
+      <Name>ObjectFactory.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Queueing\Queueing.Bootstrapper\Queueing.Bootstrapper.csproj">
+      <Project>{D6A32048-C838-4261-8ED8-53576B37EED5}</Project>
+      <Name>Queueing.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Security.Bootstrapper\Security.Bootstrapper.csproj">
+      <Project>{C421EDDD-5F13-40CE-958C-74DDF99536F1}</Project>
+      <Name>Security.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.DataAccessLayer\DataAccess.Bootstrapper\DataAccess.Bootstrapper.csproj">
+      <Project>{B1CF628D-CC34-4274-B770-8686505A6A84}</Project>
+      <Name>DataAccess.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Domain.Bootstrapper\Domain.Bootstrapper.csproj">
+      <Project>{AED89D53-49B4-4D8C-BA1B-89644123D5E5}</Project>
+      <Name>Domain.Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\3.ServiceLayer\Services.Bootstrapper\Services.Bootstrapper.csproj">
+      <Project>{1393F465-2A7E-42ED-810E-4AECE67D31DC}</Project>
+      <Name>Services.Bootstrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

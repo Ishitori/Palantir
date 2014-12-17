@@ -1,0 +1,27 @@
+syntax: glob
+*/StyleCop.Cache
+*.csproj.user
+*/obj/*
+Palantir-Engine.suo
+*/bin/*
+4.Application/Vkontakte.UI/caching-server.config
+4.Application/Vkontakte.UI/caching.config
+4.Application/Vkontakte.UI/feed-processing.config
+4.Application/Vkontakte.UI/file-system.config
+4.Application/Vkontakte.UI/queueing.config
+4.Application/Vkontakte.UI/vk-credentials.config
+*/Bin/*
+*/log.log
+4.Application/Scheduler.UI/queueing.config
+4.Application/Scheduler.UI/caching.config
+4.Application/Scheduler.UI/feed-processing.config
+4.Application/Scheduler.UI/file-system.config
+4.Application/Scheduler.UI/caching-server.config
+4.Application/Scheduler.UI/nhibernate.config
+4.Application/Scheduler.UI/nlog.config
+Palantir-Engine.sln.DotSettings.user
+4.Application/Scheduler.UI/Scheduler.UI.Publish.xml
+4.Application/Scheduler.UI/Properties/PublishProfiles/Profile1.pubxml.user
+*.orig
+Palantir-Engine.sln.DotSettings
+Palantir-Engine.v11.suo

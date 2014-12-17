@@ -1,0 +1,96 @@
+﻿@using Ix.Palantir.UI.Extensions
+@model Ix.Palantir.UI.Models.Metrics.AudienceViewModel
+@{
+    ViewBag.Title = "Анализ целевой аудитории";
+}
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/jquery-ui.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.combobox.js")"></script>
+<script src="@Url.Content("~/Scripts/d3.v3.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/palantir.treeview.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/palantir.metrics.audience.js")" type="text/javascript"></script>
+@section Script{
+    <script type="text/javascript">
+        window.globalAudienceFilter = @(string.IsNullOrWhiteSpace(this.Model.Filter) ? "{};" : this.Model.Filter + ";")
+    </script>
+}
+
+<h2>Критерии поиска целевой аудитории</h2>
+<ul class="search-criterias clearfix">
+
+    <li>
+        <div class="search-criteria-label">Пол:</div>
+
+        <div class="search-criteria-value">
+          <input type="checkbox" id="male" />
+          <label for="male">Мужской</label>
+          <input type="checkbox" id="female" />
+          <label for="female">Женский</label>
+        </div>
+    </li>
+
+    <li>
+        <div class="search-criteria-label">Возраст:</div>
+        <div id="age" class="slider"></div>
+        <div class="search-criteria-value search-criteria-slider-value"><span id="ageLabel"></span></div>
+    </li>
+
+    <li>
+        <div class="search-criteria-label">Образование:</div>
+        <div id="education" class="slider"></div>
+        <div class="search-criteria-value search-criteria-slider-value"><span id="educationLabel"></span></div>
+    </li>
+
+    <li>
+        <div class="search-criteria-label">Город:</div>
+        <div class="search-criteria-value">
+          @Html.DropDownList("city", this.Model.Cities)
+          <ul id="cities" class="custom-combobox-values"></ul>
+        </div>
+    </li>
+    
+    <li class="search-panel">
+        <input type="button" id="update" value="Искать" />
+    </li>
+</ul>
+
+<div id="searchResult" style="display: none">
+    <h2>Общее количество</h2>
+    <div id="count"></div>
+
+    <h2>Количество мужчин и женщин в группе</h2>
+    @Html.UiPieChart("menWomenChart", null)
+
+    <h2>Количество людей разного возраста в группе</h2>
+    @Html.UiPieChart("ageChart", null)
+
+    <h2>Уровень образования участников группы</h2>
+    @Html.UiPieChart("educationChart", null)
+
+    <h2>Количество людей в разных городах</h2>
+    <div class="lbl">
+    <div class="treeview-status-bar clearfix">
+        <div id="locations-hint" class="treeview-hint"></div>
+        <div id="locations-legend" class="treeview-legend"></div>
+    </div>
+    <div id="locations" class="chart-container"></div>
+     </div>
+
+    <h2>Анализ активности:</h2>
+    <h5>Соотношение постов, лайков, комментариев, репостов</h5>
+    @Html.UiPieChart("cLRChart", null)
+    <h5>Разбивка по типу контента, с которым чаще всего реагирует выбранная группа пользователей</h5>
+    @Html.UiPieChart("divDivTypeOfContentChart", null)
+
+    <h2>Наиболее популярные группы целевой аудитории</h2>
+    <div id="memberSub" class="dataTable"></div>
+
+    <h2>Интересы</h2>
+    <div class="ibl">
+    <div class="treeview-status-bar clearfix">
+        <div id="interests-hint" class="treeview-hint"></div>
+        <div id="interests-legend" class="treeview-legend"></div>
+    </div>
+    <div id="interests" class="chart-container"></div>
+    </div>
+</div>

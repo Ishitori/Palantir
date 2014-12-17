@@ -1,0 +1,25 @@
+﻿@model Ix.Palantir.Services.API.VkGroupInfo
+
+@{
+    ViewBag.Title = "GroupInfo";
+}
+
+<h2>Информация о группе @this.Model.GroupName</h2>
+
+<div id="group-info-response">
+    <table>
+        <tr>
+          <th>Название группы</th>
+          <td>@this.Model.GroupName</td>
+        </tr>
+        <tr>
+          <th>Кол-во участников группы</th>
+          <td>@this.Model.GroupMembersCount</td>
+        </tr>
+        <tr>
+          <th>Кол-во постов за указанный период</th>
+          <td>@this.Model.PostsCount</td>
+        </tr>
+    </table>
+</div>
+

@@ -1,0 +1,156 @@
+namespace Ix.Palantir.Services
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using Contracts;
+    using Contracts.Metrics;
+    using DataAccess.Contracts;
+    using DataAccess.Contracts.StatisticsProviders;
+    using DomainModel;
+    using Querying.Common;
+    using Utilities;
+    using Vkontakte.Workflows.UrlManagement;
+    using Project = Contracts.Project;
+
+    public class MetricsService : IMetricsService
+    {
+        private readonly IProjectService projectService;
+        private readonly IStatisticsProvider statisticsProvider;
+        private readonly IVkUrlProvider vkUrlProvider;
+        private readonly IUnitOfWorkProvider unitOfWorkProvider;
+
+        public MetricsService(IProjectService projectService, IStatisticsProvider statisticsProvider,
+                              IVkUrlProvider vkUrlProvider, IUnitOfWorkProvider unitOfWorkProvider)
+        {
+            this.projectService = projectService;
+            this.statisticsProvider = statisticsProvider;
+            this.vkUrlProvider = vkUrlProvider;
+            this.unitOfWorkProvider = unitOfWorkProvider;
+        }
+
+        public DashboardMetrics GetDashboardMetrics(int projectId)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                Project project = this.projectService.GetProject(projectId);
+                IEnumerable<Project> projectList = this.projectService.GetProjects();
+
+                var averageLikesPerPost = this.statisticsProvider.GetAverageLikesPerPost(projectId);
+                var interactionRate = this.statisticsProvider.GetInteractionRate(projectId);
+                var responseRate = this.statisticsProvider.GetResponseRate(projectId);
+                var involmentRate = this.statisticsProvider.GetInvolmentRate(projectId);
+                var ugcRate = this.statisticsProvider.GetUGCRate(projectId);
+                var photosCount = this.statisticsProvider.GetPhotosCount(projectId);
+                var videosCount = this.statisticsProvider.GetVideosCount(projectId);
+                var topicsCount = this.statisticsProvider.GetPostsCount(projectId);
+                var firstPostDate = this.statisticsProvider.GetFirstPostDate(projectId);
+                var lastPostDate = this.statisticsProvider.GetLastPostDate(projectId);
+
+                return new DashboardMetrics
+                           {
+                               Project = project,
+                               ProjectList = projectList,
+                               AverageLikesPerPost = Math.Round(averageLikesPerPost, 2),
+                               AverageCommentsPerPost = Math.Round(interactionRate - averageLikesPerPost, 2),
+                               InteractionRate = Math.Round(interactionRate, 2),
+                               ResponseRate = Math.Round(responseRate, 2),
+                               InvolmentRate = Math.Round(involmentRate, 2),
+                               UGCRate = Math.Round(ugcRate, 2),
+                               PhotosCount = photosCount,
+                               VideosCount = videosCount,
+                               PostsCount = topicsCount,
+                               FirstPostDate = firstPostDate,
+                               LastPostDate = lastPostDate
+                           };
+            }
+        }
+
+        public PostsMetrics GetPostsMetrics(int projectId)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                Project project = this.projectService.GetProject(projectId);
+                IEnumerable<Project> projectList = this.projectService.GetProjects();
+                var posts = this.statisticsProvider.GetMostPopularPosts(projectId, PopularBy.LikesAndComments);
+                string vkGroupId = posts.Count > 0 ? posts[0].VkGroupId.ToString() : string.Empty;
+                var firstPostDate = this.statisticsProvider.GetFirstPostDate(projectId);
+
+                return new PostsMetrics
+                           {
+                               Project = project,
+                               ProjectList = projectList,
+                               FirstPostDate = firstPostDate,
+                               MostPopularPosts = posts.Select(x => this.CreatePostEntityInfo(vkGroupId, x)).ToList()
+                           };
+            }
+        }
+
+        public IEnumerable<PointInTime> GetPhotos(int projectId, DateRange dateRange, Periodicity periodicity)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                return this.statisticsProvider.GetPhotos(projectId, dateRange, periodicity);
+            }
+        }
+
+        public IEnumerable<PointInTime> GetPosts(int projectId, DateRange dateRange, Periodicity periodicity)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                return this.statisticsProvider.GetPosts(projectId, dateRange, periodicity);
+            }
+        }
+
+        public IEnumerable<PointInTime> GetUsersCount(int projectId, DateRange dateRange, Periodicity periodicity)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                return this.statisticsProvider.GetUsersCount(projectId, dateRange, periodicity);
+            }
+        }
+
+        public IEnumerable<PointInTime> GetVideos(int projectId, DateRange dateRange, Periodicity periodicity)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                return this.statisticsProvider.GetVideos(projectId, dateRange, periodicity);
+            }
+        }
+
+        public GenderInformation GetGenderInformation(int projectId)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                CategorialValue categories = this.statisticsProvider.GetGenderInformation(projectId);
+                return GenderInformation.Create(categories);
+            }
+        }
+
+        public AgeInformation GetAgeInformation(int projectId)
+        {
+            using (this.unitOfWorkProvider.CreateUnitOfWork())
+            {
+                CategorialValue categories = this.statisticsProvider.GetAgeInformation(projectId);
+                return AgeInformation.Create(categories);
+            }
+        }
+
+        private PostEntityInfo CreatePostEntityInfo(string vkGroupId, Post post)
+        {
+            HtmlUtils htmlUtils = new HtmlUtils();
+            var postText = htmlUtils.RemoveHtml(post.Text);
+
+            return new PostEntityInfo
+                       {
+                           Id = post.VkId,
+                           Title =
+                               string.IsNullOrWhiteSpace(postText) ? "Название неизвестно" : postText.FirstSymbols(100),
+                           LikesCount = post.LikesCount,
+                           CommentsCount = post.CommentsCount,
+                           LikesAndCommentsCount = post.LikesCount + post.CommentsCount,
+                           Url = this.vkUrlProvider.GetPostUrl(vkGroupId, post.VkId)
+                       };
+        }
+    }
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.DomainModel" namespace="Ix.Palantir.DomainModel">
+
+  <class name="ActiveUsersInterests" table="interests" lazy="true" select-before-update="false" dynamic-update="false">
+
+    <property name="name" type="String" />
+    <property name="interestcount" type="Int32" />
+    
+  </class>
+
+</hibernate-mapping>

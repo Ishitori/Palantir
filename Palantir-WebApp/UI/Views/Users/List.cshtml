@@ -1,0 +1,30 @@
+﻿@model IList<Ix.Palantir.Services.API.Security.UserInfo>
+
+@{
+    ViewBag.Title = "Пользователи";
+}
+
+<div class="beforeHeaderContainer">
+  <a class="addProject" href="@Url.Action("Create", "Users")">Добавить пользователя</a>
+</div>
+
+<h2>Пользователи</h2>
+
+<table id="projectList" class="dataTable">
+    <tr>
+        <th class="group-name">Имя</th>
+        <th class="ui-table-datetime">Емейл</th>
+    </tr>
+    @for (int i = 0; i < this.Model.Count; i++)
+    {
+        var userInfo = this.Model[i];
+        <tr class="@(i % 2 == 0 ? "even" : "odd")">
+            <td>
+                <span>@userInfo.FirstName @userInfo.LastName</span>
+            </td>
+            <td>
+                <span>@userInfo.Email</span>
+            </td>
+        </tr>
+    }
+</table>

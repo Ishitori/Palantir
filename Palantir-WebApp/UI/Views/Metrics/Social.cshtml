@@ -1,0 +1,62 @@
+﻿@using System.Web.Script.Serialization
+@using Ix.Palantir.UI.Extensions
+
+@model Ix.Palantir.UI.Models.Metrics.SocialViewModel
+
+@{
+    ViewBag.Title = "Социально-демографические характеристики";
+}
+@section Script {
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jqcloud-1.0.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.table.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.metrics.social.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.flot.orderBars.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/d3.v3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.treeview.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        var citiesData = @Html.Raw(Json.Encode(Model.Locations))
+
+        $(function() {
+            new SocialUiController();
+            var init = function() {
+                new TreeView('#locations', citiesData, '#hint', '.treeview-legend');
+            };
+            init();
+
+            $(window).resize(function () {
+                $('#locations').html('');
+                init();
+            });
+        });
+    </script>
+    
+
+
+}
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/jqcloud.css")" />
+}
+
+<h2>Общее количество участников группы на графике</h2>
+<div class="info" id="chartMessage" style="display: none"></div>
+@Html.UiChart("socialChart", Url.Action("SocialChart", "Social"))
+
+<h2>Количество мужчин и женщин в группе</h2>
+@Html.UiPieChart("menWomenChart", Url.Action("GenderChart", "Social"))
+
+<h2>Количество людей разного возраста в группе</h2>
+@Html.UiPieChart("ageChart", Url.Action("AgeChart", "Social"))
+
+<h2>Уровень образования участников группы</h2>
+@Html.UiPieChart("educationChart", Url.Action("EducationChart", "Social"))
+
+<h2>Количество людей в разных городах</h2>
+<div id="locationsChart" class="chart-container clearfix">
+    <div class="treeview-status-bar clearfix">
+        <div id="hint" class="treeview-hint"></div>
+        <div class="treeview-legend"></div>
+    </div>
+    <div id="locations"></div>
+</div>

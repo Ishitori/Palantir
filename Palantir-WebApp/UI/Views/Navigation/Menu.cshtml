@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Ix.Palantir.Services.API.MenuItemLink>
+@{
+    Layout = null;
+}
+<ul class="site-menu-actions">
+    @foreach (var item in this.Model)
+    {
+        if (!item.IsSelected) 
+        {
+            <li>
+                <a href="@Url.RouteUrl(item.RouteValues)" class="@(item.Children.Count > 0 ? "dir" : "")">
+                    @if(!String.IsNullOrEmpty(item.ImgSrc)) { <img src="@item.ImgSrc" /> }
+                    @item.Title    
+                </a> 
+            </li>
+        } 
+        else 
+        {
+            <li class="current">
+                <span class="@(item.Children.Count > 0 ? "dir" : "")">
+                    @if(!String.IsNullOrEmpty(item.ImgSrc)) { <img src="@item.ImgSrc" /> }
+                    @item.Title    
+                </span> 
+            </li>
+        }
+    }
+</ul>

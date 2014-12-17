@@ -1,0 +1,34 @@
+﻿@model  Ix.Palantir.UI.Models.GroupInfoRequest
+@using Ix.Palantir.UI.Extensions
+@{
+    ViewBag.Title = "Интеграция с контактом";
+}
+
+<h2>Страница для проверки интеграции с контактом</h2>
+
+<div id="group-info-request">
+    @{ Html.BeginForm("GroupInfo", "VkTests"); }
+    @Html.ValidationSummary()
+    <div>
+        @Html.Label("Vkontakte логин:")
+        @Html.TextBoxFor(x => x.VkLogin)
+    </div>
+    <div>
+        @Html.Label("Vkontakte пароль:")
+        @Html.PasswordFor(x => x.VkPassword)
+    </div>
+    <div>
+        @Html.Label("Посты начиная с:")
+        @Html.DatePicker("endDate", "/Content/images/calendar.gif", this.ViewData["EndDate"])
+    </div>
+    <div>
+        @Html.Label("Заканчивая:")
+        @Html.DatePicker("startDate", "/Content/images/calendar.gif", this.ViewData["StartDate"])
+    </div>
+    <div>
+        @Html.Label("Урл группы:")
+        @Html.TextBoxFor(x => x.GroupUrl, new Dictionary<string, object> { {"class", "url-textbox" } })
+    </div>
+    <input type="submit" value="Получить информацию" />
+    @{ Html.EndForm(); }
+</div>

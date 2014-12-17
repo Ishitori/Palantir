@@ -1,0 +1,16 @@
+.content
+{
+  margin: 0 auto 0;
+  width: 99%; /* 900px / 960px  */
+}
+.content .main .mainContainer
+{
+  padding: 40px 0.7777778%; /* 48px / 666px */
+}
+
+
+.content .rightColumn .rightContainer
+{
+  margin: 0 0;
+  width: 100%;  /* 165px / 186px px */
+}

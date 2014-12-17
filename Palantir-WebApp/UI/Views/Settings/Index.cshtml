@@ -1,0 +1,37 @@
+﻿@model Ix.Palantir.UI.Models.Settings.GroupSettingsViewModel
+@{
+    Layout = "~/Views/Shared/_MetricsLayout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Настройки";
+}
+
+<h2>Информация об обработке группы</h2>
+<table class="processingHistory dataTable">
+    <thead>
+        <tr>
+            <th>Тип данных</th>
+            <th class="ui-table-datetime">Обновлено</th>
+        </tr>
+    </thead>
+    @for (int i = 0; i < this.Model.History.Count; i++)
+    {
+        <tr class="@(i % 2 == 0 ? "even" : "odd")">
+            <th>@this.Model.History[i].ProcessingType</th>
+            <td class="ui-td-datetime"><span class="date">@this.Model.History[i].Date</span><span class="time">@this.Model.History[i].Time</span></td>
+        </tr>
+    }
+</table>
+
+@if (this.Model.CanDeleteGroup)
+{
+    <div class="controlPanel">
+        @using (Html.BeginForm("Delete", "Settings", FormMethod.Post, new { onsubmit = "return confirm('Группа " + @Model.Project.Title + " будет удалена из мониторинга. Вы уверены, чтобы хотите удалить группу?');" }))
+        {
+            <p>
+                <input type="submit" value="Удалить группу из мониторинга" />
+            </p>
+        }
+    </div>
+}

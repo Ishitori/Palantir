@@ -1,0 +1,24 @@
+syntax: glob
+*/bin/*
+*/obj/*
+Palantir-WebApp.suo
+Palantir-WebApp.v11.suo
+*/StyleCop.Cache
+UI/caching-server.config
+UI/vk-follows.config
+UI/caching.config
+UI/feed-processing.config
+UI/file-system.config
+UI/nhibernate.config
+UI/nlog.config
+UI/queueing.config
+UI/vk-credentials.config
+UI/Logs/log.log
+Palantir-WebApp.sln.DotSettings.user
+UI/UI.Publish.xml
+Metrics-Result.xml
+UI/Properties/PublishProfiles/Profile1.pubxml.user
+Palantir-WebApp.v11.suo
+UI/UI.csproj.user
+syntax: regexp
+.orig

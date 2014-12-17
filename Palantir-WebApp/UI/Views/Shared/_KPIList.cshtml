@@ -1,0 +1,18 @@
+﻿@model Ix.Palantir.UI.Models.Shared.KpiListModel
+
+<div class="kpi">
+    <div class="kpi-header"><div class="@Model.CssClass">@Model.Title</div></div>
+    <table class="kpi-value-container">
+        @for (int i = 0; i < Model.Items.Count; i++)
+        {
+            var item = this.Model.Items[i];
+            <tr class="kpi-list-item @(i == Model.Items.Count - 1 ? "last" : "")">
+                <td class="kpi-value kpi-value-@item.ValueType.ToString().ToLowerInvariant()">@item.Value</td>
+                <th class="kpi-title"><span class="@item.CssClass">@item.Title</span></th>
+            </tr>
+        }
+    </table>
+    @if (!string.IsNullOrWhiteSpace(Model.DetailsUrl)) {
+        <div class="kpi-footer"><a href="@Model.DetailsUrl">детали</a></div>
+    }
+</div>

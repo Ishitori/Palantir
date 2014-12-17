@@ -1,0 +1,43 @@
+﻿@model IList<Ix.Palantir.Services.API.Security.AccountInfo>
+
+@{
+    ViewBag.Title = "Список аккаунтов";
+}
+
+<h2>Список аккаунтов</h2>
+
+<p>
+    @Html.ActionLink("Добавить аккаунт", "Create")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Наименование
+        </th>
+        <th>
+            Макс. кол-во проектов
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+
+    @foreach (var account in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(account.Title, "View", new { accountId = account.Id })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => account.MaxProjectsCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => account.CanDeleteProjects)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { accountId = account.Id })
+            </td>
+        </tr>
+    }
+</table>

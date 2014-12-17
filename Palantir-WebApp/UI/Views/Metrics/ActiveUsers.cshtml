@@ -1,0 +1,66 @@
+﻿@using Ix.Palantir.UI.Extensions
+
+@model Ix.Palantir.UI.Models.Metrics.MetricsViewModel
+
+@{
+    ViewBag.Title = "Активные пользователи";
+}
+@section Script {
+    <script src="@Url.Content("~/Scripts/palantir.common.ActiveUsers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.ActiveUsers.UiTagCloudWrapper.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.ActiveUsers.LoadCharts.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jqcloud-1.0.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.table.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.metrics.activeusers.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.flot.categories.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/d3.v3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.treeview.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new ActiveUsersUiController();
+        });
+    </script>
+}
+
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/jqcloud.css")" />
+}
+
+
+<div id="mostActiveUser" style="display: none">
+    
+    <h2>Наиболее активные участники группы</h2>
+    <div id="mostActiveUsersContainer" class="chart-container" data-source="@Url.Action("GetData", "ActiveUsers")">
+    </div>
+
+    <h2>Их интересы</h2>
+
+    <div class="treeview-status-bar clearfix">
+        <div id="interests-hint" class="treeview-hint"></div>
+        <div id ="interests-legend" class="treeview-legend"></div>
+    </div>
+    <div id="interests" class="chart-container"></div>
+
+    <div id="userInterestsDetails" data-source="@Url.Action("GetUserInterestsDetails", "Interests")"></div>
+
+    <h2>Соотношение возраста</h2>
+    @Html.UiPieChart("ageChart", Url.Action("GetData", "ActiveUsers"))
+
+    <h2>Соотношение количества мужчин и женщин</h2>
+    @Html.UiPieChart("genderChart", Url.Action("GetData", "ActiveUsers"))
+
+    <h2>Уровень образование</h2>
+    @Html.UiPieChart("educationChart", Url.Action("GetData", "ActiveUsers"))
+
+    <h2>Распределение по странам и городам</h2>
+    <div class="treeview-status-bar clearfix">
+        <div id="countryAndCity-hint" class="treeview-hint"></div>
+        <div id="countryAndCity-legend" class="treeview-legend"></div>
+    </div>
+    <div id="countryAndCityData" class="chart-container"></div>
+
+</div>
+
+<div id="load" style="display: block;"> @Html.Partial("_AjaxLoader")</div>
+<div id="message" class="info" style="display: none">Данных за этот период нет</div>

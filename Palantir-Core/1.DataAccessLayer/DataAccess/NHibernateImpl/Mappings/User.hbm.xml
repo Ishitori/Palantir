@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Ix.Palantir.Security.API" namespace="Ix.Palantir.Security.API">
+
+  <class name="User" table="user" lazy="true" select-before-update="false" dynamic-update="false">
+    <id name="Id" type="Int32" unsaved-value="0">
+      <generator class="sequence">
+        <param name="sequence">user_id_seq</param>
+      </generator>
+    </id>
+
+    <property name="FirstName" type="String" />
+    <property name="LastName" type="String" />
+    <property name="Email" type="String" />
+    <property name="PasswordHash" type="String" />
+    <property name="Salt" type="Int32" />
+    <many-to-one name="Account" class="Ix.Palantir.DomainModel.Account, Ix.Palantir.DomainModel" column="accountid" foreign-key="accountid" fetch="join" />
+  </class>
+
+</hibernate-mapping>

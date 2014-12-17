@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B0064C30-885C-4B33-93B3-ADA75DAC973B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Services</RootNamespace>
+    <AssemblyName>Ix.Palantir.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ix.Palantir.DataAccess.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.DataAccess.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Logging">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Querying.Common">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Querying.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Queueing.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Queueing.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Security">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Security.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Security.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.UrlManagement.API">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.UrlManagement.API.dll</HintPath>
+    </Reference>
+    <Reference Include="Ix.Palantir.Utilities">
+      <HintPath>..\..\Core\4.Application\App.Bootstrapper\bin\Debug\Ix.Palantir.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulingService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\2.DomainLayer\Vkontakte.API\Vkontakte.API.csproj">
+      <Project>{88134A02-22F8-4223-870B-B0BF30E906CA}</Project>
+      <Name>Vkontakte.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Infrastructure.Process\Infrastructure.Process.csproj">
+      <Project>{FA3DE497-AF8B-4FAC-B323-421D985E6DD3}</Project>
+      <Name>Infrastructure.Process</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\2.DomainLayer\Vkontakte.Workflows\Vkontakte.Workflows.csproj">
+      <Project>{3C48B68A-BC9C-43CD-B1B3-EFDDB4B75BD0}</Project>
+      <Name>Vkontakte.Workflows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services.API\Services.API.csproj">
+      <Project>{06E35176-C4E9-4E1D-9077-9E2A1D89144B}</Project>
+      <Name>Services.API</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>

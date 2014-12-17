@@ -1,0 +1,7 @@
+# Use xsd.exe as it described at
+
+Step1: Generate XSD scheme from xml
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\xsd.exe" news-feed.xml 
+
+Step2: Generate .cs classes from xsd
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\xsd.exe" news-feed.xsd /classes /namespace:Ix.Palantir.Vkontakte.API.Responses.NewsFeed

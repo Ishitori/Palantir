@@ -1,0 +1,12 @@
+﻿@model Ix.Palantir.UI.Models.Metrics.DashboardViewModel
+           
+@{
+    Layout = null;
+}
+
+<div class="kpi-container clearfix">
+    @Html.Partial("~/Views/Shared/_KpiList.cshtml", Model.Kpi)
+    @Html.Partial("~/Views/Shared/_KpiList.cshtml", Model.Engagement)
+    @Html.Partial("~/Views/Shared/_KpiList.cshtml", Model.Users)
+    @Html.Partial("~/Views/Shared/_KpiList.cshtml", Model.Content)
+</div>

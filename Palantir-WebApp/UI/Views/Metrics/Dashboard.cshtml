@@ -1,0 +1,33 @@
+﻿@using Ix.Palantir.UI.Extensions
+@using Ix.Palantir.UI.Models.Shared
+
+@model Ix.Palantir.UI.Models.Metrics.MetricsViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h1>@Model.Project.Title <a href="@Model.Project.Url" target="_blank"><img src="/Content/images/open_separate.png" /></a></h1>
+
+@if (!Model.CheckAvailability.IsReady)
+{
+    @Html.Partial("_ProgressView", Model)
+}
+
+<div id="dashboardMetrics" data-source="@Url.Action("Metrics", "Dashboard")" data-id="@Model.Project.Id">
+</div>
+
+<h2>Количество постов</h2>
+<div class="info" id="chartMessage" style="display: none"></div>
+@Html.UiChart("dashboardChart", Url.Action("Chart", "Dashboard"))
+
+<div id="dashboardMetricsEmpty" style="display: none">
+    @Html.Partial("~/Views/Metrics/_DashboardMetricsEmpty.cshtml")
+</div>
+
+    <script src="@Url.Content("~/Scripts/palantir.metrics.dashboard.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            new DashboardUiController();
+        });
+    </script>

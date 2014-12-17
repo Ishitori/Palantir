@@ -1,0 +1,36 @@
+﻿@model Ix.Palantir.UI.Models.Metrics.MetricsViewModel
+
+<script src="@Url.Content("~/Scripts/jquery-ui.1.10.3.js")" type="text/javascript"></script>
+<p>Данные для группы загружаются. Пока данные не будут загружены полностью, вы можете увидеть расхождения в данных на разных вкладках. 
+    Вы можете безопасно закрыть браузер или переключить вкладку. Вы будете уведомлены, когда данные загрузятся. <a href="@Url.Action("Index", "Settings")">Информация об обработке группы</a>.</p>
+
+<div id="progressbar" style="height: 20px;"></div>
+<p id="result">Задач выполнено: @Model.CheckAvailability.Done из @Model.CheckAvailability.Total</p>
+
+<script>
+        $("#progressbar").progressbar({
+            value: @Model.CheckAvailability.Done,
+            max: @Model.CheckAvailability.Total
+            });
+    update();
+
+    function update() {
+        setTimeout(function() {
+            $.ajax({
+                url: "/Projects/CheckAvailability",
+                data: { id: @Model.Project.Id },
+                    type: 'POST',
+                    success: function(data) {
+                        if (data.Done == data.Total) {
+                            window.location.reload();
+                        }
+                        $('#result').html('Задач выполнено: ' + data.Done + ' из ' + data.Total);
+                        $("#progressbar").progressbar({
+                            value: data.Done,
+                        });
+                        update();
+                    }
+            });
+        }, 15000);
+    };
+</script>

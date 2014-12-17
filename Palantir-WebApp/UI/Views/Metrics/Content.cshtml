@@ -1,0 +1,33 @@
+﻿@using Ix.Palantir.UI.Extensions      
+@{
+    ViewBag.Title = "Анализ контента";
+}
+
+<h2>Прирост фотографий и видеозаписей</h2>
+@Html.UiChart("photosChart", Url.Action("Chart", "Content"))  
+
+<div id="differenceViewers">
+    <div>Прирост количества фотографий за период: <span id="photosDifference"></span></div>
+    <div>Прирост количества видео за период: <span id="videosDifference"></span></div>
+</div>        
+
+<h2>Самые популярные медиа</h2>
+<div id="mostPopularContentContainer" data-source="@Url.Action("GetMostPopularContents", "Content")"></div>
+
+@section Script{                                                     
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.table.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/palantir.metrics.content.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            new ContentUiController();
+        });
+    </script>
+}                   
+
+@section Styles
+{
+    <style type="text/css">
+        #differenceViewers { display:none }
+    </style>
+}

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8031b152-5d70-418b-b899-03e6b55ccd14" name="Default" comment="" />
+    <ignored path="Scripts.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/palantir.common.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1365651143574" ignored="false" />
+    <file path="/palantir.metrics.dashboard.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1365649985943" ignored="false" />
+    <file path="/palantir.create.project.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1366773594827" ignored="false" />
+    <file path="/palantir.metrics.comparegroups.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1368584407512" ignored="false" />
+    <file path="/palantir.chart.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1369267302849" ignored="false" />
+    <file path="/palantir.color.js" changelist="8031b152-5d70-418b-b899-03e6b55ccd14" time="1368500748725" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Scripts" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="palantir.metrics.dashboard.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/palantir.metrics.dashboard.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="35" selection-start="1125" selection-end="1130" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="palantir.metrics.posts.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/palantir.metrics.posts.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="31" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="palantir.metrics.social.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/palantir.metrics.social.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="27" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="palantir.chart.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/palantir.chart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="67" selection-start="2377" selection-end="2377" vertical-scroll-proportion="0.61403507">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.flot.curvedLines.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery.flot.curvedLines.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="360" column="11" selection-start="14362" selection-end="14362" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="palantir.create.project.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/palantir.create.project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="94" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="palantir.metrics.comparegroups.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/palantir.metrics.comparegroups.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="91" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1368176576798" expanded="true" signature="151:1936" placeholder="{&quot;compareButton&quot;: null...}" />
+                <marker date="1368176576798" expanded="true" signature="166:487" placeholder="{&quot;compareButtonId&quot;: &quot;#concurrentButton&quot;...}" />
+                <marker date="1368176576798" expanded="true" signature="691:1934" placeholder="{...}" />
+                <marker date="1368176576798" expanded="true" signature="1292:1919" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.flot.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery.flot.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="87" column="21" selection-start="7173" selection-end="7178" vertical-scroll-proportion="-9.666667">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.flot.spline.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery.flot.spline.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="46" selection-start="880" selection-end="880" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-1.4.4.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jquery-1.4.4.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="233" column="4" selection-start="6296" selection-end="6296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/palantir.export.js" />
+        <option value="$PROJECT_DIR$/palantir.metrics.content.js" />
+        <option value="$PROJECT_DIR$/palantir.metrics.social.js" />
+        <option value="$PROJECT_DIR$/palantir.metrics.posts.js" />
+        <option value="$PROJECT_DIR$/palantir.metrics.dashboard.js" />
+        <option value="$PROJECT_DIR$/palantir.common.js" />
+        <option value="$PROJECT_DIR$/palantir.create.project.js" />
+        <option value="$PROJECT_DIR$/palantir.color.js" />
+        <option value="$PROJECT_DIR$/palantir.columnar.table.js" />
+        <option value="$PROJECT_DIR$/palantir.metrics.comparegroups.js" />
+        <option value="$PROJECT_DIR$/jquery.flot.curvedLines.js" />
+        <option value="$PROJECT_DIR$/jquery.flot.spline.js" />
+        <option value="$PROJECT_DIR$/jquery.flot.js" />
+        <option value="$PROJECT_DIR$/palantir.chart.js" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
+    <option name="y" value="-9" />
+    <option name="width" value="1864" />
+    <option name="height" value="1098" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents ProjectPane="true" />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="xpath.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="FullScreen" value="false" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8031b152-5d70-418b-b899-03e6b55ccd14" name="Default" comment="" />
+      <created>1357816448172</created>
+      <updated>1357816448172</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-9" width="1864" height="1098" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15249589" sideWeight="0.67062634" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/ui.datepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="31" selection-start="1485" selection-end="1504" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.social.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="27" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui.datepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.social.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="27" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.export.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="50" selection-start="0" selection-end="3130" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.create.project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="94" selection-start="2159" selection-end="2159" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.export.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="50" selection-start="0" selection-end="3130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.comparegroups.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="91" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1368176576798" expanded="true" signature="151:1936" placeholder="{&quot;compareButton&quot;: null...}" />
+            <marker date="1368176576798" expanded="true" signature="166:487" placeholder="{&quot;compareButtonId&quot;: &quot;#concurrentButton&quot;...}" />
+            <marker date="1368176576798" expanded="true" signature="691:1934" placeholder="{...}" />
+            <marker date="1368176576798" expanded="true" signature="1292:1919" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="43" selection-start="777" selection-end="777" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="35" selection-start="1125" selection-end="1130" vertical-scroll-proportion="0.0">
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery-1.4.4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="4" selection-start="6296" selection-end="6296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.metrics.content.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="31" selection-start="1485" selection-end="1504" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery.flot.curvedLines.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="360" column="11" selection-start="14362" selection-end="14362" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.columnar.table.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="23" selection-start="907" selection-end="907" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery.flot.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="21" selection-start="7173" selection-end="7178" vertical-scroll-proportion="-9.666667">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/palantir.chart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="67" selection-start="2377" selection-end="2377" vertical-scroll-proportion="0.61403507">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

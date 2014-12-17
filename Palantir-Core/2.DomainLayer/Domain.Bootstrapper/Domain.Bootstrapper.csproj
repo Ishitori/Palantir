@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AED89D53-49B4-4D8C-BA1B-89644123D5E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ix.Palantir.Domain.Bootstrapper</RootNamespace>
+    <AssemblyName>Ix.Palantir.Domain.Bootstrapper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>$(SolutionDir)\CodingStandards.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\External\StructureMap\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DomainRegistry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\0.Framework\Logging\Logging.csproj">
+      <Project>{450B8893-9CD4-41AA-882A-447434740E8D}</Project>
+      <Name>Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory.StructureMap\ObjectFactory.StructureMap.csproj">
+      <Project>{B492E976-C465-42A8-AAA6-5885AFDAE81B}</Project>
+      <Name>ObjectFactory.StructureMap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\ObjectFactory\ObjectFactory.csproj">
+      <Project>{8020656C-AA71-48D0-802B-142152AAC455}</Project>
+      <Name>ObjectFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\Queueing\Queueing.API\Queueing.API.csproj">
+      <Project>{E0A795BF-350E-4A59-865E-AFF0A540F23C}</Project>
+      <Name>Queueing.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\UrlManagement.API\UrlManagement.API.csproj">
+      <Project>{A39B8D88-FBD7-4AA0-A1D6-F2D7C66A1442}</Project>
+      <Name>UrlManagement.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\0.Framework\UrlManagement\UrlManagement.csproj">
+      <Project>{91CE03F6-C339-4ED6-B97D-B7988F51AAFE}</Project>
+      <Name>UrlManagement %280.Framework\UrlManagement\UrlManagement%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.DataAccessLayer\DataAccess.API\DataAccess.API.csproj">
+      <Project>{FA2C2E4D-D23D-4666-8B69-FA75BC7CD508}</Project>
+      <Name>DataAccess.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.DataAccessLayer\DataAccess\DataAccess.csproj">
+      <Project>{A2800C09-0CE9-4AB7-8755-255189ACC105}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Analytics.API\Domain.Analytics.API.csproj">
+      <Project>{B43809A7-A4A6-42A8-96AF-AB1299AEEE85}</Project>
+      <Name>Domain.Analytics.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Analytics\Domain.Analytics.csproj">
+      <Project>{B14C7471-AB19-4423-AF23-D14AA0940411}</Project>
+      <Name>Domain.Analytics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainModel\DomainModel.csproj">
+      <Project>{53D14A56-5242-4BFC-8B6D-C59A7BE5CB2D}</Project>
+      <Name>DomainModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Import Project="$(SolutionDir)\External\StyleCop\Microsoft.StyleCop.targets" />
+</Project>
